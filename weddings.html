@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Films — Aperture Visuals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --butter:#F5EFC8;--butter-mid:#EFE7B0;--butter-deep:#E8DC94;
+    --cream:#0f0f0f;--white:#1a1a1a;
+    --ink:#F5EFC8;--ink-mid:#F0E8D0;--ink-light:#c8b888;
+    --ink-dark:#1C1C1C;--ink-dark-mid:#3a3a3a;
+    --line:rgba(245,239,200,0.1);--line-strong:rgba(245,239,200,0.2);
+    --font-display:'Cormorant Garamond',serif;--font-body:'Jost',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{background:#0f0f0f;color:var(--ink);font-family:var(--font-body);font-weight:300;overflow-x:hidden;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;flex-direction:column;align-items:center;padding:0.9rem 4rem 0.75rem;background:rgba(15,15,15,0.97);border-bottom:1px solid var(--line);backdrop-filter:blur(10px);transition:padding 0.3s ease,box-shadow 0.3s ease;} nav.scrolled{padding:0.6rem 4rem 0.5rem;box-shadow:0 2px 20px rgba(28,28,28,0.06);}
+  .nav-logo{font-family:var(--font-display);font-size:1.55rem;font-weight:300;letter-spacing:0.14em;color:var(--ink);text-decoration:none;text-transform:uppercase;display:block;text-align:center;line-height:1;transition:font-size 0.3s ease;margin-bottom:0.35rem;} nav.scrolled .nav-logo{font-size:1.2rem;}
+  .nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;}
+  nav .nav-links{justify-content:center;width:100%;}
+  .nav-links a{color:var(--ink-light);text-decoration:none;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;transition:color 0.3s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--ink);}
+  .nav-dropdown{position:relative;}
+  .nav-dropdown>a{display:flex;align-items:center;gap:0.35rem;}
+  .nav-dropdown>a::after{content:'';width:5px;height:5px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-top:-2px;transition:transform 0.2s;}
+  .nav-dropdown:hover>a::after{transform:rotate(-135deg);}
+  .dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#1a1a1a;border:1px solid var(--line-strong);min-width:220px;display:none;flex-direction:column;padding:0.5rem 0;box-shadow:0 8px 32px rgba(28,28,28,0.08);margin-top:0.8rem;}  .nav-dropdown::after{content:"";position:absolute;top:100%;left:-20px;right:-20px;height:1rem;background:transparent;}  .nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu{display:flex;}
+
+  .dropdown-menu a{padding:0.75rem 1.5rem;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-light);text-decoration:none;transition:all 0.2s;white-space:nowrap;}
+  .dropdown-menu a:hover{color:var(--ink);background:#0f0f0f;}
+  .dropdown-divider{height:1px;background:var(--line);margin:0.4rem 0;}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+  .nav-toggle span{display:block;width:22px;height:1px;background:var(--ink);}
+  .page-hero{min-height:60vh;display:grid;grid-template-columns:1fr 1fr;margin-top:92px;}
+  .page-hero-left{background:var(--butter);color:var(--ink-dark);color:var(--ink-dark);padding:5rem 4rem;display:flex;flex-direction:column;justify-content:flex-end;}
+  .page-eyebrow{font-size:0.68rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--ink-light);margin-bottom:1.5rem;}
+  .page-title{font-family:var(--font-display);font-size:clamp(3rem,6vw,5.5rem);font-weight:300;line-height:0.95;color:var(--ink);}
+  .page-title em{font-style:italic;color:var(--ink-dark-mid);}
+  .page-subtitle{font-size:0.94rem;line-height:1.9;color:var(--ink-mid);max-width:400px;margin-top:2rem;}
+  .hero-jump-btn{display:inline-flex;align-items:center;gap:0.6rem;margin-top:1.8rem;padding:0.85rem 1.8rem;border:1px solid var(--ink-dark);color:var(--ink-dark);text-decoration:none;font-family:var(--font-body);font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;transition:all 0.3s;background:transparent;}
+  .hero-jump-btn:hover{background:var(--ink-dark);color:var(--butter);}
+  .page-hero-right{background:#1a1a1a;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+  .page-hero-img{width:100%;height:100%;background:#e8e2d4;display:flex;align-items:center;justify-content:center;}
+  .page-hero-img img{width:100%;height:100%;object-fit:cover;}
+  .page-hero-img-ph{color:rgba(28,28,28,0.18);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;text-align:center;line-height:2.2;}
+  .section-label{font-size:0.68rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-light);margin-bottom:1.5rem;}
+  .section-title{font-family:var(--font-display);font-size:clamp(2.2rem,3.5vw,3.4rem);font-weight:300;line-height:1.15;color:var(--ink);}
+  .section-title em{font-style:italic;color:var(--ink-light);}
+  .intro-section{padding:6rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center;border-top:1px solid var(--line-strong);background:var(--butter) !important;}
+  .intro-heading{font-family:var(--font-display);font-size:clamp(2.2rem,3vw,3rem);font-weight:300;line-height:1.15;color:var(--ink-dark);margin-bottom:1.8rem;}
+  .intro-heading em{font-style:italic;color:var(--ink-dark-mid);}
+  .intro-body{font-size:0.94rem;line-height:1.95;color:var(--ink-mid);margin-bottom:1.2rem;}
+  .branding-photo{width:100%;aspect-ratio:4/5;background:#2a2a2a;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+  .branding-photo img{width:100%;height:100%;object-fit:cover;}
+  .branding-photo-ph{color:rgba(28,28,28,0.2);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;text-align:center;line-height:2.2;}
+
+  /* CALCULATOR */
+  .calc-section{padding:5rem 4rem 7rem;border-top:1px solid var(--line-strong);background:var(--butter) !important;}
+  .calc-intro{max-width:560px;margin-bottom:4rem;}
+  .calc-intro p{font-size:0.94rem;line-height:1.9;color:var(--ink-mid);margin-top:1rem;}
+  .calc-wrap{display:grid;grid-template-columns:1fr 390px;gap:4rem;align-items:start;}
+  .calc-steps{display:flex;flex-direction:column;}
+  .calc-step{padding:2.5rem 0;border-top:1px solid var(--line-strong);}
+  .calc-step:first-child{padding-top:0;border-top:none;}
+  .step-header{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.5rem;}
+  .step-num{font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink-light);}
+  .step-label{font-family:var(--font-display);font-size:1.55rem;font-weight:300;color:var(--ink);}
+  .slider-display{font-family:var(--font-display);font-size:2.4rem;font-weight:300;color:var(--ink);margin-bottom:0.9rem;}
+  .slider-display span{font-family:var(--font-body);font-size:0.84rem;color:var(--ink-light);margin-left:0.5rem;}
+  input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:1px;background:var(--line-strong);outline:none;cursor:pointer;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--ink);}
+  input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--ink);border:none;}
+  .slider-bounds{display:flex;justify-content:space-between;margin-top:0.6rem;}
+  .slider-bound{font-size:0.7rem;color:var(--ink-dark-mid);}
+
+  /* Package cards — connected, no gap, no double border */
+  .pkgs{display:flex;flex-direction:column;}
+  .pkg-btn{
+    display:grid;grid-template-columns:22px 1fr auto;gap:1.2rem;align-items:center;
+    border:1px solid var(--line-strong);margin-top:-1px;
+    background:transparent;padding:1.4rem 1.8rem;cursor:pointer;
+    font-family:var(--font-body);color:var(--ink-dark);text-align:left;width:100%;transition:all 0.2s;
+  }
+  .pkg-btn:first-child{margin-top:0;}
+  .pkg-btn:hover{background:rgba(28,28,28,0.08);}
+  .pkg-btn.active{border:2px solid var(--ink-dark) !important;background:rgba(28,28,28,0.08);z-index:1;position:relative;margin:-1px 0;padding:1.4rem 2.5rem !important;}
+  .radio{width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(28,28,28,0.3);position:relative;flex-shrink:0;transition:border-color 0.2s;}
+  .pkg-btn.active .radio{border-color:var(--ink-dark);}
+  .pkg-btn.active .radio::after{content:'';position:absolute;inset:4px;border-radius:50%;background:var(--ink-dark);}
+  .pkg-name{font-family:var(--font-display);font-size:1.2rem;font-weight:300;display:block;color:var(--ink-dark);}
+  .pkg-desc{font-size:0.8rem;color:var(--ink-dark-mid);display:block;margin-top:0.3rem;}
+  .pkg-price{font-family:var(--font-display);font-size:1.1rem;font-weight:300;white-space:nowrap;color:var(--ink-dark);padding-right:1.5rem;}
+
+  /* Add-ons — better spacing between name and sub */
+  .addons{display:flex;flex-direction:column;}
+  .addon-row{
+    display:grid;grid-template-columns:22px 1fr auto;gap:1.2rem;align-items:center;
+    padding:1.2rem 0;border-bottom:1px solid var(--line);
+    cursor:pointer;background:transparent;text-align:left;
+    font-family:var(--font-body);color:var(--ink);width:100%;
+  }
+  .addon-row:last-child{border-bottom:none;}
+  .check-box{width:18px;height:18px;border:1.5px solid var(--line-strong);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;}
+  .addon-row.checked .check-box{border-color:var(--ink);background:var(--ink);}
+  .check-box svg{width:10px;height:10px;stroke:#fff;stroke-width:2.5;fill:none;opacity:0;}
+  .addon-row.checked .check-box svg{opacity:1;}
+  .addon-text{display:flex;flex-direction:column;gap:0.35rem;}
+  .addon-name{font-size:0.9rem;color:var(--ink);font-weight:400;}
+  .addon-sub{font-size:0.74rem;color:var(--ink-light);}
+  .addon-price{font-size:0.9rem;color:var(--ink-mid);white-space:nowrap;text-align:right;}
+
+  /* Quote panel */
+  .quote-panel{position:sticky;top:7rem;background:#1a1a1a;border:1px solid var(--line-strong);padding:2rem;}
+  .quote-title{font-family:var(--font-display);font-size:1.5rem;font-weight:300;color:var(--ink);margin-bottom:0.3rem;}
+  .quote-subtitle{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-light);margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--line);}
+  .quote-lines{display:flex;flex-direction:column;margin-bottom:1.5rem;}
+  .quote-line{display:flex;justify-content:space-between;align-items:baseline;padding:0.75rem 0;border-bottom:1px dotted var(--line);font-size:0.84rem;}
+  .quote-line:last-child{border-bottom:none;}
+  .ql-name{color:var(--ink-mid);}
+  .ql-sub{font-size:0.7rem;color:var(--ink-light);display:block;margin-top:0.15rem;}
+  .ql-amt{font-size:0.9rem;color:var(--ink);white-space:nowrap;}
+  .quote-total{display:flex;justify-content:space-between;align-items:flex-end;padding:1rem 0;border-top:1.5px solid var(--ink);}
+  .qt-label{font-family:var(--font-display);font-size:1.1rem;font-weight:300;}
+  .qt-label small{display:block;font-family:var(--font-body);font-size:0.68rem;color:var(--ink-light);margin-top:0.1rem;}
+  .qt-amt{font-family:var(--font-display);font-size:3.2rem;font-weight:300;line-height:1;}
+  .quote-cta{display:block;width:100%;margin-top:1.5rem;background:var(--ink);color:var(--cream);border:none;padding:1.1rem;font-family:var(--font-body);font-size:0.74rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;text-align:center;text-decoration:none;transition:background 0.2s;}
+  .quote-cta:hover{background:var(--ink-mid);}
+  .quote-note{margin-top:1rem;font-size:0.74rem;color:var(--ink-light);line-height:1.7;text-align:center;}
+  .quote-disclaimers{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:0.5rem;}
+  .quote-disclaimers p{font-size:0.68rem;color:var(--ink-light);line-height:1.65;padding-left:0.8rem;position:relative;}
+  .quote-disclaimers p::before{content:'·';position:absolute;left:0;color:var(--ink-light);}
+  .mobile-bar{position:fixed;left:0;right:0;bottom:0;transform:translateY(100%);transition:transform 0.35s ease;background:var(--ink);color:var(--cream);display:none;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.5rem;z-index:20;}
+  .mb-total{font-family:var(--font-display);font-size:2rem;font-weight:300;}
+  .mb-total small{display:block;font-family:var(--font-body);font-size:0.68rem;color:rgba(253,251,244,0.6);letter-spacing:0.1em;text-transform:uppercase;}
+  .mb-cta{background:var(--butter);color:var(--ink);border:none;padding:0.8rem 1.5rem;font-family:var(--font-body);font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;white-space:nowrap;}
+  @media(max-width:900px){.mobile-bar{display:flex !important;z-index:50;}.mobile-bar.bar-visible{transform:translateY(0);}.calc-wrap{grid-template-columns:1fr}.quote-panel{display:none !important}}
+
+  /* VIDEO EXAMPLES */
+  .examples-section{padding:5rem 4rem 7rem;border-top:1px solid var(--line);background:#1a1a1a;}
+  .examples-layout{display:grid;grid-template-columns:1fr 200px;gap:2.5rem;margin-top:3rem;align-items:start;}
+  .examples-films{display:flex;flex-direction:column;gap:2rem;}
+  .example-film{position:relative;}
+  .example-frame{aspect-ratio:16/9;background:#2a2a2a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;position:relative;overflow:hidden;}
+  .example-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .example-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+  .play-circle{width:56px;height:56px;border-radius:50%;border:1.5px solid rgba(28,28,28,0.3);display:flex;align-items:center;justify-content:center;position:relative;z-index:1;}
+  .play-circle svg{width:18px;height:18px;fill:rgba(28,28,28,0.4);margin-left:4px;}
+  .example-ph{color:rgba(28,28,28,0.2);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;text-align:center;line-height:2;position:relative;z-index:1;}
+  .example-label{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-light);margin-top:0.75rem;}
+  .example-reel{}
+  .example-reel-frame{aspect-ratio:9/16;background:#2a2a2a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;position:relative;overflow:hidden;}
+  .example-reel-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+
+  .cta-band{background:var(--butter);padding:5rem 4rem;display:grid;grid-template-columns:1fr auto;align-items:center;gap:4rem;border-top:1px solid var(--line-strong);}
+  .cta-title{font-family:var(--font-display);font-size:clamp(2rem,3vw,3rem);font-weight:300;line-height:1.15;color:var(--ink-dark);}
+  .cta-title em{font-style:italic;color:var(--ink-dark-mid);}
+  .cta-btn{display:inline-flex;align-items:center;gap:1rem;padding:1rem 2.2rem;border:1px solid var(--ink-dark);color:var(--ink-dark);text-decoration:none;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;font-family:var(--font-body);white-space:nowrap;transition:all 0.3s;}
+  .cta-btn:hover{background:var(--ink-dark);color:var(--butter);}
+  footer{padding:2.5rem 4rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:#1a1a1a;}
+  .footer-logo{font-family:var(--font-display);font-size:1.05rem;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-light);}
+  .footer-copy{font-size:0.72rem;color:var(--ink-light);}
+  .footer-links{display:flex;gap:2rem;list-style:none;}
+  .footer-links a{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-light);text-decoration:none;transition:color 0.3s;}
+  .footer-links a:hover{color:var(--ink);}
+  .fade-up{opacity:0;transform:translateY(22px);transition:opacity 0.7s ease,transform 0.7s ease;}
+  .fade-up.visible{opacity:1;transform:translateY(0);}
+  @media(max-width:900px){
+        nav{padding:0.6rem 0;}
+    .nav-toggle{display:flex;left:1.5rem;right:auto;} body{padding-top:80px;}
+    .nav-logo{padding:0.7rem 3rem 0;font-size:1.25rem;}
+    nav.scrolled{padding:0 0 0.5rem;}
+    .nav-links{display:none;flex-direction:column;gap:0;width:100%;margin-bottom:0;border-top:1px solid var(--line);padding-top:0.5rem;}
+    .nav-links.open{display:flex;}
+    .nav-links>li{text-align:center;}
+    .nav-links a{padding:0.9rem 1rem;display:block;font-size:0.85rem;letter-spacing:0.18em;}
+    .dropdown-menu{position:static;transform:none;box-shadow:none;border:none;background:rgba(245,239,200,0.3);padding:0.3rem 0;}
+    .nav-dropdown.open .dropdown-menu{display:flex;}
+    .nav-dropdown>a::after{display:none;}
+    .nav-dropdown .dropdown-menu{display:none !important;}
+    .dropdown-menu{position:static;transform:none;box-shadow:none;border:none;background:rgba(245,239,200,0.3);padding:0.3rem 0 0.3rem 1rem;}
+  
+    .page-hero{grid-template-columns:1fr;}
+    .page-hero-right{min-height:50vw;}
+    .page-hero-left{padding:4rem 1.5rem 3rem;}
+    .intro-section{grid-template-columns:1fr;gap:3rem;padding:4rem 1.5rem;background:var(--butter);}
+    .calc-section{padding:4rem 1.5rem 6rem;}
+    .examples-section{padding:4rem 1.5rem 6rem;}
+    .examples-layout{grid-template-columns:1fr;}
+    .example-reel-frame{aspect-ratio:16/9;}
+    .cta-band{grid-template-columns:1fr;padding:4rem 1.5rem;gap:2rem;}
+    footer{flex-direction:column;gap:1.2rem;text-align:center;padding:2rem 1.5rem;}
+  }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .fade-up{opacity:0;transform:translateY(32px);transition:opacity 0.75s ease,transform 0.75s ease;}
+  .fade-up.visible{opacity:1;transform:translateY(0);}
+  .slide-left{opacity:0;transform:translateX(-40px);transition:opacity 0.75s ease,transform 0.75s ease;}
+  .slide-left.visible{opacity:1;transform:translateX(0);}
+  .slide-right{opacity:0;transform:translateX(40px);transition:opacity 0.75s ease,transform 0.75s ease;}
+  .slide-right.visible{opacity:1;transform:translateX(0);}
+  .fade-in{opacity:0;transition:opacity 0.9s ease;}
+  .fade-in.visible{opacity:1;}
+  .stagger-children>*{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+  .stagger-children.visible>*:nth-child(1){opacity:1;transform:translateY(0);transition-delay:0ms;}
+  .stagger-children.visible>*:nth-child(2){opacity:1;transform:translateY(0);transition-delay:90ms;}
+  .stagger-children.visible>*:nth-child(3){opacity:1;transform:translateY(0);transition-delay:180ms;}
+  .stagger-children.visible>*:nth-child(4){opacity:1;transform:translateY(0);transition-delay:270ms;}
+  .stagger-children.visible>*:nth-child(5){opacity:1;transform:translateY(0);transition-delay:360ms;}
+  .stagger-children.visible>*:nth-child(6){opacity:1;transform:translateY(0);transition-delay:450ms;}
+
+  /* ── DECORATIVE GRAPHICS ── */
+  .deco-float{position:absolute;pointer-events:none;z-index:0;}
+  .deco-float svg{display:block;}
+
+  /* ── MOBILE: hide non-essential sections ── */
+  @media(max-width:900px){
+    .mobile-hide{display:none !important;}
+    .deco-float{display:none !important;}
+    .deco-svg{display:none !important;}
+  }
+
+  /* ── BUTTER SECTION TEXT: always dark ── */
+  .calc-section, .calc-section *:not(.quote-panel):not(.quote-panel *){color:var(--ink-dark) !important;color:var(--ink-dark) !important;}
+  .calc-section .section-label{color:var(--ink-dark-mid) !important;}
+  .calc-section .calc-heading em{color:var(--ink-dark-mid) !important;}
+  .calc-section .calc-body{color:var(--ink-dark-mid) !important;}
+  .calc-section .step-num{color:var(--ink-dark-mid) !important;}
+  .calc-section .step-label{color:var(--ink-dark) !important;}
+  .calc-section .slider-labels span{color:var(--ink-dark-mid) !important;}
+  .calc-section .pkg-name{color:var(--ink-dark) !important;}
+  .calc-section .pkg-desc{color:var(--ink-dark-mid) !important;}
+  .calc-section .pkg-price{color:var(--ink-dark) !important;}
+  .calc-section .addon-name{color:var(--ink-dark) !important;}
+  .calc-section .addon-sub{color:var(--ink-dark-mid) !important;}
+  .calc-section .addon-price{color:var(--ink-dark) !important;}
+  
+  /* Page hero left text */
+  .page-hero-left *, .page-hero-left{color:var(--ink-dark) !important;}
+  .page-hero-left em{color:var(--ink-dark-mid) !important;}
+  .page-hero-left .page-subtitle{color:var(--ink-dark-mid) !important;}
+  .page-hero-left .hero-jump-btn{color:var(--ink-dark) !important;border-color:var(--ink-dark) !important;}
+  /* Hero left */
+  .hero-left *, .hero-left{color:var(--ink-dark) !important;}
+  .hero-left em{color:var(--ink-dark-mid) !important;}
+  /* Stats band */
+  .stats *, .stats{color:var(--ink-dark) !important;}
+  /* CTA band */
+  .cta-band *, .cta-band{color:var(--ink-dark) !important;}
+  .cta-band em{color:var(--ink-dark-mid) !important;}
+  .cta-band .cta-btn{color:var(--ink-dark) !important;border-color:var(--ink-dark) !important;}
+  .cta-band .cta-btn:hover{background:var(--ink-dark) !important;color:var(--butter) !important;}
+  /* Section label on butter */
+  .calc-intro .section-label{color:var(--ink-dark-mid) !important;}
+  /* Intro section on weddings/RE */
+  .intro-section .section-label{color:var(--ink-dark-mid) !important;}
+  .intro-section .intro-heading{color:var(--ink-dark) !important;}
+  .intro-section .intro-heading em{color:var(--ink-dark-mid) !important;}
+  .intro-section .intro-body{color:var(--ink-dark-mid) !important;}
+  section.intro-section{background:var(--butter) !important;}
+  /* Guide section label */
+  .guide-section .section-label{color:var(--ink-dark-mid) !important;}
+
+  /* ── TEXT ON DARK BACKGROUNDS ── */
+  .about-intro .about-body,
+  .about-intro .about-heading,
+  .reviews-section .review-text,
+  .reviews-section .review-author,
+  .reviews-section .section-label,
+  .reviews-section .reviews-title,
+  .examples-section .section-label,
+  .examples-section h2,
+  .examples-section .example-label,
+  .calc-section .section-label,
+  .discounts-section .discount-body,
+  .discounts-section .discount-title,
+  .discounts-section .discount-label,
+  .contact-wrap .section-label,
+  .contact-wrap .contact-title,
+  .contact-wrap .form-label,
+  .contact-wrap .form-note,
+  .footer-logo,
+  .footer-links a,
+  .footer-copy { color:var(--ink) !important; }
+
+  .about-intro .about-body p,
+  .reviews-section .review-text { color:var(--ink-mid) !important; }
+
+  /* ── CUSTOM RANGE SLIDER (visible on butter bg) ── */
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:rgba(28,28,28,0.25);outline:none;border-radius:2px;cursor:pointer;margin:10px 0;padding:12px 0;background-clip:content-box;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:50%;background:var(--ink-dark);cursor:pointer;border:2px solid var(--ink-dark);box-shadow:0 2px 8px rgba(0,0,0,0.25);margin-top:-11px;}
+  input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--ink-dark);cursor:pointer;border:2px solid var(--ink-dark);}
+  input[type=range]::-webkit-slider-runnable-track{height:2px;background:rgba(28,28,28,0.25);border-radius:2px;}
+  input[type=range]::-moz-range-track{height:2px;background:rgba(28,28,28,0.25);border-radius:2px;}
+  /* ── ADDON SELECTED STATE (dark tint like packages) ── */
+  .addon-row.checked{background:rgba(28,28,28,0.08) !important;border:2px solid var(--ink-dark) !important;margin:-1px 0;padding:1rem 2.5rem !important;}
+  .check-box{width:18px;height:18px;border:1.5px solid rgba(28,28,28,0.3);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;}
+  .addon-row.checked .check-box{background:var(--ink-dark);border-color:var(--ink-dark);}
+  .addon-row.checked .check-box svg{display:block;}
+  .check-box svg{display:none;width:10px;height:10px;fill:none;stroke:var(--butter);stroke-width:2.5;}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="index.html" class="nav-logo">Aperture Visuals</a>
+  <ul class="nav-links" id="nav-links">
+    <li class="nav-dropdown">
+      <a href="about.html">About</a>
+      <div class="dropdown-menu">
+        <a href="about.html">About Allison</a>
+        <div class="dropdown-divider"></div>
+        <a href="about.html#reviews">Reviews</a>
+      </div>
+    </li>
+    <li><a href="weddings.html" class="active">Weddings</a></li>
+    <li class="nav-dropdown">
+      <a href="real-estate.html">Real Estate</a>
+      <div class="dropdown-menu">
+        <a href="real-estate.html">Overview</a>
+        <a href="real-estate.html#calculator">Rate Calculator</a>
+        <div class="dropdown-divider"></div>
+        <a href="real-estate.html#set-the-scene">Set the Scene Guide</a>
+      </div>
+    </li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-left">
+    <p class="page-eyebrow">Timeless storytelling</p>
+    <h1 class="page-title">Wedding <em>Films</em></h1>
+    <p class="page-subtitle">Your day is one of the most important of your life. I'm here to make sure you can relive every emotion of it, forever.</p>
+    <a href="#calculator" class="hero-jump-btn">Build your package &darr;</a>
+  </div>
+  <div class="page-hero-right">
+    <div class="page-hero-img"><!-- <img src="images/wedding-hero.jpg" alt="Wedding film"> --><div class="page-hero-img-ph">Hero photo<br>images/wedding-hero.jpg</div></div>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="fade-up">
+    <p class="section-label">The experience</p>
+    <h2 class="intro-heading" style="display:flex;align-items:center;flex-wrap:nowrap;"><span>More than<br>a <em>highlight reel</em></span><svg style="display:block;height:110px;opacity:0.38;margin-left:1.8rem;flex-shrink:0;" viewBox="0 0 70 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="25" cy="28" r="16" stroke="#b8a070" stroke-width="1.3"/><circle cx="45" cy="28" r="16" stroke="#b8a070" stroke-width="1.3"/><polygon points="25,8 29,13 25,18 21,13" stroke="#b8a070" stroke-width="1.2" fill="none"/></svg></h2>
+    <p class="intro-body">Based in Grand Rapids and available throughout West Michigan and beyond, I work with you from the first inquiry through delivery to make sure the final film feels exactly right.</p>
+  </div>
+  <div class="branding-photo slide-right"><img src="images/weddings-branding.jpg" alt="Aperture Visuals" style="width:100%;height:100%;object-fit:cover;"></div>
+</section>
+
+<section class="calc-section fade-up" id="calculator">
+  <div class="calc-intro">
+    <p class="section-label">Build your package</p>
+    <h2 class="section-title">Wedding film <em>calculator</em></h2>
+    <p>Select your film length, hours of coverage, and any add-ons. Your estimate updates instantly.</p>
+  </div>
+  <div class="calc-wrap">
+    <div class="calc-steps">
+      <div class="calc-step">
+        <div class="step-header"><span class="step-num">01</span><span class="step-label">Film length</span></div>
+        <p class="slider-display" id="length-display">4 <span>minutes</span></p>
+        <input type="range" id="length-slider" min="3" max="6" step="1" value="4">
+        <div class="slider-bounds"><span class="slider-bound">3 min</span><span class="slider-bound">4 min</span><span class="slider-bound">5 min</span><span class="slider-bound">6 min</span></div>
+      </div>
+      <div class="calc-step">
+        <div class="step-header"><span class="step-num">02</span><span class="step-label">Hours of coverage</span></div>
+        <p class="slider-display" id="hours-display">8 <span>hours</span></p>
+        <input type="range" id="hours-slider" min="6" max="10" step="1" value="8">
+        <div class="slider-bounds"><span class="slider-bound">6 hrs</span><span class="slider-bound">7 hrs</span><span class="slider-bound">8 hrs</span><span class="slider-bound">9 hrs</span><span class="slider-bound">10 hrs</span></div>
+      </div>
+      <div class="calc-step">
+        <div class="step-header"><span class="step-num">03</span><span class="step-label">Package</span></div>
+        <div class="pkgs" id="pkgs"></div>
+      </div>
+      <div class="calc-step" style="border-bottom:none;padding-bottom:0;">
+        <div class="step-header"><span class="step-num">04</span><span class="step-label">Add-ons</span></div>
+        <div class="addons" id="addons"></div>
+      </div>
+    </div>
+    <aside class="quote-panel">
+      <p class="quote-title">Your estimate</p>
+      <p class="quote-subtitle">No obligation — confirmed on booking</p>
+      <div class="quote-lines" id="quote-lines"></div>
+      <div class="quote-total">
+        <span class="qt-label">Total<small>starting estimate</small></span>
+        <span class="qt-amt" id="total-amt">$0</span>
+      </div>
+      <a class="quote-cta" id="cta-btn" href="#">Inquire about this package &rarr;</a>
+      <p class="quote-note">Reach out and I'll get back to you within 24 hours with next steps and available dates.</p>
+      <div class="quote-disclaimers">
+        <p>All packages include a pre-wedding consultation call and a check-in call around one month before your wedding day.</p>
+        <p>Weddings outside a 60-mile radius of Grand Rapids will include a travel fee.</p>
+        <p>Packages are subject to change.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<div class="mobile-bar" id="mobile-bar">
+  <span class="mb-total"><small>Your estimate</small><span id="mb-amt">$0</span></span>
+  <a class="mb-cta" id="mb-cta" href="#">Inquire &rarr;</a>
+</div>
+
+<section class="examples-section fade-up mobile-hide" style="position:relative;">
+  <div class="deco-float" style="top:2.5rem;right:4rem;"><svg style="height:40px;opacity:0.45;" viewBox="0 0 70 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="10" width="60" height="30" rx="3" stroke="#b8a070" stroke-width="1.5"/><rect x="9" y="15" width="6" height="6" rx="1" stroke="#b8a070" stroke-width="1"/><rect x="9" y="29" width="6" height="6" rx="1" stroke="#b8a070" stroke-width="1"/><rect x="55" y="15" width="6" height="6" rx="1" stroke="#b8a070" stroke-width="1"/><rect x="55" y="29" width="6" height="6" rx="1" stroke="#b8a070" stroke-width="1"/><line x1="22" y1="11" x2="22" y2="39" stroke="#b8a070" stroke-width="1"/><line x1="36" y1="11" x2="36" y2="39" stroke="#b8a070" stroke-width="1"/><line x1="50" y1="11" x2="50" y2="39" stroke="#b8a070" stroke-width="1"/><polygon points="40,20 40,30 48,25" stroke="#b8a070" stroke-width="1" fill="none"/></svg></div>
+  <p class="section-label">Work samples</p>
+  <h2 class="section-title" style="margin-top:1rem;">See the <em>films</em></h2>
+  <div class="examples-layout">
+    <div class="examples-films">
+      <div class="example-film">
+        <div class="example-frame">
+          <!-- REPLACE: <iframe src="https://www.youtube.com/embed/YOUR_ID" allowfullscreen></iframe> -->
+          <div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="example-ph">Wedding film 1<br>Paste YouTube or Vimeo embed here</div>
+        </div>
+        <p class="example-label">Film example one</p>
+      </div>
+      <div class="example-film">
+        <div class="example-frame">
+          <!-- REPLACE: <iframe src="https://www.youtube.com/embed/YOUR_ID" allowfullscreen></iframe> -->
+          <div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="example-ph">Wedding film 2<br>Paste YouTube or Vimeo embed here</div>
+        </div>
+        <p class="example-label">Film example two</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" style="position:relative;">
+  <div class="deco-float" style="right:3rem;top:50%;transform:translateY(-50%);"><svg style="height:42px;opacity:0.45;" viewBox="0 0 70 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="25" cy="28" r="16" stroke="#b8a070" stroke-width="1.5"/><circle cx="45" cy="28" r="16" stroke="#b8a070" stroke-width="1.5"/><polygon points="25,8 29,13 25,18 21,13" stroke="#b8a070" stroke-width="1.2" fill="none"/></svg></div>
+  <div class="fade-up">
+    <p class="section-label">Book your date</p>
+    <h2 class="cta-title">Let's start with<br>a <em>conversation</em></h2>
+  </div>
+  <a href="contact.html" class="cta-btn">Inquire now &rarr;</a>
+</section>
+
+<footer>
+  <span class="footer-logo">Aperture Visuals</span>
+  <ul class="footer-links"><li><a href="about.html">About</a></li><li><a href="weddings.html">Weddings</a></li><li><a href="real-estate.html">Real Estate</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <span class="footer-copy">&copy; 2026 Aperture Visuals</span>
+</footer>
+
+<script>
+const toggle=document.getElementById('nav-toggle'),links=document.getElementById('nav-links');
+toggle.addEventListener('click',()=>links.classList.toggle('open'));
+const obs=new IntersectionObserver((e)=>{e.forEach((en,i)=>{if(en.isIntersecting)setTimeout(()=>en.target.classList.add('visible'),i*80);});},{threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+const EMAIL='allison@aperture-visuals.com';
+const money=n=>'$'+n.toLocaleString('en-US');
+
+// Package spacing: Signature is $150 more than Essential, Collection is $150 more than Signature.
+const PACKAGES=[
+  {id:'essential', name:'Essential', modifier:0,
+    desc:'Highlight film — ceremony & reception coverage.'},
+  {id:'signature', name:'Signature', modifier:150,
+    desc:'Highlight film + full ceremony edit.'},
+  {id:'collection',name:'Collection',modifier:300,
+    desc:'Highlight film + full ceremony & reception edits.'},
+];
+const ADDONS=[
+  {id:'reel',  name:'Social Highlight Reel', sub:'60–90 sec vertical short-form edit', price:150},
+  {id:'rush',  name:'Rush Edit',             sub:'Delivered within 1 month of your wedding day', price:200},
+  {id:'raw',   name:'All Raw Files',         sub:'Full unedited footage — digital download', price:100},
+  {id:'drive', name:'Physical Flash Drive',  sub:'All deliverables on a keepsake USB drive', price:75},
+  {id:'drone', name:'Drone Footage',         sub:'Aerial cinematic coverage of your venue', price:100},
+];
+const state={length:4,hours:8,pkg:'essential',addons:new Set()};
+const getBase=()=>1100+(state.length-3)*100+(state.hours-6)*100;
+const getPkgMod=()=>PACKAGES.find(p=>p.id===state.pkg).modifier;
+
+function renderPkgs(){
+  const base=getBase();
+  document.getElementById('pkgs').innerHTML=PACKAGES.map(p=>`
+    <button class="pkg-btn${state.pkg===p.id?' active':''}" data-pkg="${p.id}">
+      <span class="radio"></span>
+      <span><span class="pkg-name">${p.name}</span><span class="pkg-desc">${p.desc}</span></span>
+      <span class="pkg-price">${money(base+p.modifier)}</span>
+    </button>`).join('');
+}
+function renderAddons(){
+  document.getElementById('addons').innerHTML=ADDONS.map(a=>{
+    const on=state.addons.has(a.id);
+    return `<div class="addon-row${on?' checked':''}" data-addon="${a.id}" role="button" tabindex="0" aria-pressed="${on}">
+      <span class="check-box"><svg viewBox="0 0 14 14"><path d="M2 7l3.5 3.5L12 3"/></svg></span>
+      <span class="addon-text"><span class="addon-name">${a.name}</span><span class="addon-sub">${a.sub}</span></span>
+      <span class="addon-price">+${money(a.price)}</span>
+    </div>`;
+  }).join('');
+}
+function renderQuote(){
+  const base=getBase()+getPkgMod();
+  const pkg=PACKAGES.find(p=>p.id===state.pkg);
+  const addonTotal=ADDONS.filter(a=>state.addons.has(a.id)).reduce((s,a)=>s+a.price,0);
+  const total=base+addonTotal;
+  let html=`<div class="quote-line"><span class="ql-name">${state.length}-min film, ${state.hours} hrs<span class="ql-sub">${pkg.name} package</span></span><span class="ql-amt">${money(base)}</span></div>`;
+  ADDONS.forEach(a=>{if(state.addons.has(a.id))html+=`<div class="quote-line"><span class="ql-name">${a.name}</span><span class="ql-amt">+${money(a.price)}</span></div>`;});
+  document.getElementById('quote-lines').innerHTML=html;
+  document.getElementById('total-amt').textContent=money(total);
+  document.getElementById('mb-amt').textContent=money(total);
+  const summary=`• ${state.length}-min film, ${state.hours} hrs (${pkg.name}): ${money(base)}`+ADDONS.filter(a=>state.addons.has(a.id)).map(a=>`%0D%0A• ${a.name}: +${money(a.price)}`).join('');
+  const body=`Hi Allison,%0D%0A%0D%0AI'm interested in this wedding film package:%0D%0A%0D%0A${summary}%0D%0A%0D%0AEstimated total: ${money(total)}%0D%0A%0D%0AWedding date:%0D%0AVenue:%0D%0A%0D%0AThanks!`;
+  const href=`mailto:${EMAIL}?subject=Wedding%20film%20inquiry%20-%20${money(total)}&body=${body}`;
+  document.getElementById('cta-btn').href=href;
+  document.getElementById('mb-cta').href=href;
+}
+function render(){
+  document.getElementById('length-display').innerHTML=state.length+' <span>minutes</span>';
+  document.getElementById('hours-display').innerHTML=state.hours+' <span>hours</span>';
+  renderPkgs();renderAddons();renderQuote();
+}
+document.getElementById('length-slider').addEventListener('input',e=>{state.length=parseInt(e.target.value);render();});
+document.getElementById('hours-slider').addEventListener('input',e=>{state.hours=parseInt(e.target.value);render();});
+document.addEventListener('click',e=>{
+  const p=e.target.closest('[data-pkg]');if(p){state.pkg=p.dataset.pkg;return render();}
+  const a=e.target.closest('[data-addon]');if(a){const id=a.dataset.addon;state.addons.has(id)?state.addons.delete(id):state.addons.add(id);return render();}
+});
+document.addEventListener('keydown',e=>{
+  if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-addon]')){e.preventDefault();const id=e.target.dataset.addon;state.addons.has(id)?state.addons.delete(id):state.addons.add(id);render();}
+});
+render();
+  // Mobile bar visibility — show only when calculator is in view
+  const calcSection = document.getElementById('calculator');
+  const mobileBar = document.getElementById('mobile-bar');
+  if(calcSection && mobileBar){
+    const barObs = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          mobileBar.classList.add('bar-visible');
+        } else {
+          mobileBar.classList.remove('bar-visible');
+        }
+      });
+    },{threshold:0.05});
+    barObs.observe(calcSection);
+  }
+</script>
+</body>
+</html>

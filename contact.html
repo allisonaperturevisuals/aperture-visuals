@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Aperture Visuals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --butter:#F5EFC8;--butter-mid:#EFE7B0;--butter-deep:#E8DC94;
+    --cream:#0f0f0f;--white:#1a1a1a;
+    --ink:#F5EFC8;--ink-mid:#F0E8D0;--ink-light:#c8b888;
+    --ink-dark:#1C1C1C;--ink-dark-mid:#3a3a3a;
+    --line:rgba(245,239,200,0.1);--line-strong:rgba(245,239,200,0.2);
+    --font-display:'Cormorant Garamond',serif;--font-body:'Jost',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{background:#0f0f0f;color:var(--ink);font-family:var(--font-body);font-weight:300;overflow-x:hidden;min-height:100vh;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;flex-direction:column;align-items:center;padding:0.9rem 4rem 0.75rem;background:rgba(15,15,15,0.97);border-bottom:1px solid var(--line);backdrop-filter:blur(10px);transition:padding 0.3s ease,box-shadow 0.3s ease;} nav.scrolled{padding:0.6rem 4rem 0.5rem;box-shadow:0 2px 20px rgba(28,28,28,0.06);}
+  .nav-logo{font-family:var(--font-display);font-size:1.55rem;font-weight:300;letter-spacing:0.14em;color:var(--ink);text-decoration:none;text-transform:uppercase;display:block;text-align:center;line-height:1;transition:font-size 0.3s ease;margin-bottom:0.35rem;} nav.scrolled .nav-logo{font-size:1.2rem;}
+  .nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;}
+  nav .nav-links{justify-content:center;width:100%;}
+  .nav-links a{color:var(--ink-light);text-decoration:none;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;transition:color 0.3s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--ink);}
+  .nav-dropdown{position:relative;}
+  .nav-dropdown>a{display:flex;align-items:center;gap:0.35rem;}
+  .nav-dropdown>a::after{content:'';width:5px;height:5px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-top:-2px;transition:transform 0.2s;}
+  .nav-dropdown:hover>a::after{transform:rotate(-135deg);}
+  .dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#1a1a1a;border:1px solid var(--line-strong);min-width:220px;display:none;flex-direction:column;padding:0.5rem 0;box-shadow:0 8px 32px rgba(28,28,28,0.08);margin-top:0.8rem;}  .nav-dropdown::after{content:"";position:absolute;top:100%;left:-20px;right:-20px;height:1rem;background:transparent;}  .nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu{display:flex;}
+
+  .dropdown-menu a{padding:0.75rem 1.5rem;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-light);text-decoration:none;transition:all 0.2s;white-space:nowrap;}
+  .dropdown-menu a:hover{color:var(--ink);background:#0f0f0f;}
+  .dropdown-divider{height:1px;background:var(--line);margin:0.4rem 0;}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+  .nav-toggle span{display:block;width:22px;height:1px;background:var(--ink);}
+
+  .contact-wrap{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 72px);margin-top:92px;}
+  .contact-left{background:var(--butter);padding:5rem;display:flex;flex-direction:column;justify-content:space-between;}
+  .contact-right{padding:5rem;border-left:1px solid var(--line-strong);background:#1a1a1a;}
+  .section-label{font-size:0.62rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-dark-mid);margin-bottom:1.5rem;}
+  .contact-heading{font-family:var(--font-display);font-size:clamp(2.5rem,4vw,4rem);font-weight:300;line-height:1.1;color:var(--ink-dark);margin-bottom:1.8rem;}
+  .contact-heading em{font-style:italic;color:var(--ink-dark-mid);}
+  .contact-body{font-size:0.84rem;line-height:1.9;color:var(--ink-dark-mid);margin-bottom:3rem;}
+  .contact-details{display:flex;flex-direction:column;gap:2rem;}
+  .contact-detail-label{font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--ink-dark-mid);margin-bottom:0.4rem;}
+  .contact-detail-val{font-family:var(--font-display);font-size:1.2rem;font-weight:300;color:var(--ink-dark);}
+  .contact-detail-val a{color:var(--ink-dark);text-decoration:none;border-bottom:1px solid rgba(28,28,28,0.2);transition:border-color 0.3s;}
+  .contact-detail-val a:hover{border-color:var(--ink-dark);}
+
+  .form-title{font-family:var(--font-display);font-size:1.8rem;font-weight:300;color:var(--ink);margin-bottom:2.5rem;}
+  .form-title em{font-style:italic;color:var(--ink-light);}
+  .form-group{margin-bottom:2rem;}
+  .form-label{display:block;font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--ink-dark-mid);margin-bottom:0.7rem;}
+  .form-input,.form-select,.form-textarea{width:100%;background:transparent;border:none;border-bottom:1px solid var(--line-strong);color:var(--ink);font-family:var(--font-body);font-size:0.9rem;font-weight:300;padding:0.6rem 0;outline:none;transition:border-color 0.3s;-webkit-appearance:none;}
+  .form-input::placeholder,.form-textarea::placeholder{color:var(--ink-light);}
+  .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--ink);}
+  .form-select{cursor:pointer;background:transparent;color:var(--ink-light);}
+  .form-select option{background:#1a1a1a;color:var(--ink);}
+  .form-select.filled{color:var(--ink);}
+  .form-textarea{resize:none;min-height:120px;line-height:1.7;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+  .form-submit{display:inline-flex;align-items:center;gap:1rem;padding:1rem 2.5rem;border:1px solid var(--ink);color:var(--ink);background:transparent;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;font-family:var(--font-body);cursor:pointer;transition:all 0.3s;margin-top:0.5rem;}
+  .form-submit:hover{background:var(--ink);color:var(--cream);}
+  .form-success{display:none;padding:1.5rem;border:1px solid var(--line-strong);background:rgba(245,239,200,0.3);margin-top:1.5rem;}
+  .form-success p{font-size:0.84rem;line-height:1.8;color:var(--ink-mid);}
+
+  footer{padding:2.5rem 4rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:#1a1a1a;}
+  .footer-logo{font-family:var(--font-display);font-size:1rem;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-light);}
+  .footer-copy{font-size:0.65rem;color:var(--ink-light);}
+  .footer-links{display:flex;gap:2rem;list-style:none;}
+  .footer-links a{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-light);text-decoration:none;transition:color 0.3s;}
+  .footer-links a:hover{color:var(--ink);}
+  @media(max-width:900px){
+        nav{padding:0.6rem 0;}
+    .nav-toggle{display:flex;left:1.5rem;right:auto;} body{padding-top:80px;}
+    .nav-logo{padding:0.7rem 3rem 0;font-size:1.25rem;}
+    nav.scrolled{padding:0 0 0.5rem;}
+    .nav-links{display:none;flex-direction:column;gap:0;width:100%;margin-bottom:0;border-top:1px solid var(--line);padding-top:0.5rem;}
+    .nav-links.open{display:flex;}
+    .nav-links>li{text-align:center;}
+    .nav-links a{padding:0.9rem 1rem;display:block;font-size:0.85rem;letter-spacing:0.18em;}
+    .dropdown-menu{position:static;transform:none;box-shadow:none;border:none;background:rgba(245,239,200,0.3);padding:0.3rem 0;}
+    .nav-dropdown.open .dropdown-menu{display:flex;}
+    .nav-dropdown>a::after{display:none;}
+    .nav-dropdown .dropdown-menu{display:none !important;}
+    .dropdown-menu{position:static;transform:none;box-shadow:none;border:none;background:rgba(245,239,200,0.3);padding:0.3rem 0 0.3rem 1rem;}
+  
+    .contact-wrap{grid-template-columns:1fr;}
+    .contact-left{padding:4rem 1.5rem;}
+    .contact-right{padding:4rem 1.5rem;border-left:none;border-top:1px solid var(--line-strong);}
+    .form-row{grid-template-columns:1fr;}
+    .form-group{margin-bottom:1.2rem;}
+    footer{flex-direction:column;gap:1.2rem;text-align:center;padding:2rem 1.5rem;}
+  }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .fade-up{opacity:0;transform:translateY(32px);transition:opacity 0.75s ease,transform 0.75s ease;}
+  .fade-up.visible{opacity:1;transform:translateY(0);}
+  .slide-left{opacity:0;transform:translateX(-40px);transition:opacity 0.75s ease,transform 0.75s ease;}
+  .slide-left.visible{opacity:1;transform:translateX(0);}
+  .slide-right{opacity:0;transform:translateX(40px);transition:opacity 0.75s ease,transform 0.75s ease;}
+  .slide-right.visible{opacity:1;transform:translateX(0);}
+  .fade-in{opacity:0;transition:opacity 0.9s ease;}
+  .fade-in.visible{opacity:1;}
+  .stagger-children>*{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+  .stagger-children.visible>*:nth-child(1){opacity:1;transform:translateY(0);transition-delay:0ms;}
+  .stagger-children.visible>*:nth-child(2){opacity:1;transform:translateY(0);transition-delay:90ms;}
+  .stagger-children.visible>*:nth-child(3){opacity:1;transform:translateY(0);transition-delay:180ms;}
+  .stagger-children.visible>*:nth-child(4){opacity:1;transform:translateY(0);transition-delay:270ms;}
+  .stagger-children.visible>*:nth-child(5){opacity:1;transform:translateY(0);transition-delay:360ms;}
+  .stagger-children.visible>*:nth-child(6){opacity:1;transform:translateY(0);transition-delay:450ms;}
+
+  /* ── MOBILE: hide non-essential sections ── */
+  @media(max-width:900px){
+    .mobile-hide{display:none !important;}
+    .deco-float{display:none !important;}
+    .deco-svg{display:none !important;}
+  }
+
+  /* ── BUTTER SECTION TEXT: always dark ── */
+  .calc-section, .calc-section *:not(.quote-panel):not(.quote-panel *){color:var(--ink-dark) !important;}
+  .calc-section .section-label{color:var(--ink-dark-mid) !important;}
+  .calc-section .calc-heading em{color:var(--ink-dark-mid) !important;}
+  .calc-section .calc-body{color:var(--ink-dark-mid) !important;}
+  .calc-section .step-num{color:var(--ink-dark-mid) !important;}
+  .calc-section .step-label{color:var(--ink-dark) !important;}
+  .calc-section .slider-labels span{color:var(--ink-dark-mid) !important;}
+  .calc-section .pkg-name{color:var(--ink-dark) !important;}
+  .calc-section .pkg-desc{color:var(--ink-dark-mid) !important;}
+  .calc-section .pkg-price{color:var(--ink-dark) !important;}
+  .calc-section .addon-name{color:var(--ink-dark) !important;}
+  .calc-section .addon-sub{color:var(--ink-dark-mid) !important;}
+  .calc-section .addon-price{color:var(--ink-dark) !important;}
+  .calc-section input[type=range]{accent-color:var(--ink-dark);}
+  /* Page hero left text */
+  .page-hero-left *, .page-hero-left{color:var(--ink-dark) !important;}
+  .page-hero-left em{color:var(--ink-dark-mid) !important;}
+  .page-hero-left .page-subtitle{color:var(--ink-dark-mid) !important;}
+  .page-hero-left .hero-jump-btn{color:var(--ink-dark) !important;border-color:var(--ink-dark) !important;}
+  /* Hero left */
+  .hero-left *, .hero-left{color:var(--ink-dark) !important;}
+  .hero-left em{color:var(--ink-dark-mid) !important;}
+  /* Stats band */
+  .stats *, .stats{color:var(--ink-dark) !important;}
+  /* CTA band */
+  .cta-band *, .cta-band{color:var(--ink-dark) !important;}
+  .cta-band em{color:var(--ink-dark-mid) !important;}
+  .cta-band .cta-btn{color:var(--ink-dark) !important;border-color:var(--ink-dark) !important;}
+  .cta-band .cta-btn:hover{background:var(--ink-dark) !important;color:var(--butter) !important;}
+  /* Section label on butter */
+  .calc-intro .section-label{color:var(--ink-dark-mid) !important;}
+  /* Intro section on weddings/RE */
+  .intro-section .section-label{color:var(--ink-dark-mid) !important;}
+  .intro-section .intro-heading{color:var(--ink-dark) !important;}
+  .intro-section .intro-heading em{color:var(--ink-dark-mid) !important;}
+  .intro-section .intro-body{color:var(--ink-dark-mid) !important;}
+  /* Guide section label */
+  .guide-section .section-label{color:var(--ink-dark-mid) !important;}
+
+  /* ── TEXT ON DARK BACKGROUNDS ── */
+  .about-intro .about-body,
+  .about-intro .about-heading,
+  .reviews-section .review-text,
+  .reviews-section .review-author,
+  .reviews-section .section-label,
+  .reviews-section .reviews-title,
+  .examples-section .section-label,
+  .examples-section h2,
+  .examples-section .example-label,
+  .calc-section .section-label,
+  .discounts-section .discount-body,
+  .discounts-section .discount-title,
+  .discounts-section .discount-label,
+  .contact-wrap .section-label,
+  .contact-wrap .contact-title,
+  .contact-wrap .form-label,
+  .contact-wrap .form-note,
+  .footer-logo,
+  .footer-links a,
+  .footer-copy { color:var(--ink) !important; }
+
+  .about-intro .about-body p,
+  .reviews-section .review-text { color:var(--ink-mid) !important; }
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="index.html" class="nav-logo">Aperture Visuals</a>
+  <ul class="nav-links" id="nav-links">
+    <li class="nav-dropdown">
+      <a href="about.html">About</a>
+      <div class="dropdown-menu">
+        <a href="about.html">About Allison</a>
+        <div class="dropdown-divider"></div>
+        <a href="about.html#reviews">Reviews</a>
+      </div>
+    </li>
+    <li><a href="weddings.html">Weddings</a></li>
+    <li class="nav-dropdown">
+      <a href="real-estate.html">Real Estate</a>
+      <div class="dropdown-menu">
+        <a href="real-estate.html">Overview</a>
+        <a href="real-estate.html#calculator">Rate Calculator</a>
+        <div class="dropdown-divider"></div>
+        <a href="real-estate.html#set-the-scene">Set the Scene Guide</a>
+      </div>
+    </li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="contact-wrap">
+  <div class="contact-left">
+    <div>
+      <p class="section-label">Get in touch</p>
+      <h1 class="contact-heading">Let's tell your<br><em>story together</em></h1>
+      <p class="contact-body">Whether you're planning a wedding, listing a property, or building a brand, I'd love to hear about your project. Fill out the form and I'll be in touch within 24 hours.</p>
+    </div>
+    <div class="contact-details">
+      <div><p class="contact-detail-label">Location</p><p class="contact-detail-val">Grand Rapids, Michigan</p></div>
+      <div><p class="contact-detail-label">Email</p><p class="contact-detail-val"><a href="mailto:allison@aperture-visuals.com">allison@aperture-visuals.com</a></p></div>
+      <div>
+        <p class="contact-detail-label">Follow along</p>
+        <p class="contact-detail-val">
+          <!-- REPLACE href with your actual links -->
+          <a href="#" target="_blank">TikTok</a> &nbsp;&bull;&nbsp;
+          <a href="#" target="_blank">Instagram</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-right">
+    <h2 class="form-title">Send a <em>message</em></h2>
+    <form id="contact-form" action="https://formspree.io/f/mzdnkwzp" method="POST">
+      <!-- Formspree is connected, submissions go to allison@aperture-visuals.com -->
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">First name</label><input type="text" name="first_name" class="form-input" placeholder="Jane" required></div>
+        <div class="form-group"><label class="form-label">Last name</label><input type="text" name="last_name" class="form-input" placeholder="Smith" required></div>
+      </div>
+      <div class="form-group"><label class="form-label">Email address</label><input type="email" name="email" class="form-input" placeholder="jane@email.com" required></div>
+      <div class="form-group">
+        <label class="form-label">I'm interested in</label>
+        <select name="service" class="form-select" id="service-select" required>
+          <option value="" disabled selected>Select a service</option>
+          <option value="wedding">Wedding Film</option>
+          <option value="realestate">Real Estate Photography &amp; Video</option>
+          <option value="other">Something else</option>
+        </select>
+      </div>
+      <div class="form-group"><label class="form-label">Tell me about your project</label><textarea name="message" class="form-textarea" placeholder="Share any details: date, location, vision..."></textarea></div>
+      <button type="submit" class="form-submit">Send message &rarr;</button>
+    </form>
+    <div class="form-success" id="form-success">
+      <p>Thank you. I've received your message and will be in touch within 24 hours.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-logo">Aperture Visuals</span>
+  <ul class="footer-links"><li><a href="about.html">About</a></li><li><a href="weddings.html">Weddings</a></li><li><a href="real-estate.html">Real Estate</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <span class="footer-copy">&copy; 2026 Aperture Visuals</span>
+</footer>
+<script>
+  const toggle=document.getElementById('nav-toggle'),links=document.getElementById('nav-links'),navEl=document.getElementById('nav');
+  if(toggle){toggle.addEventListener('click',()=>{toggle.classList.toggle('open');links.classList.toggle('open');});}
+  // Mobile dropdown tap support
+  document.querySelectorAll('.nav-dropdown > a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      if(window.innerWidth <= 900) {
+        e.preventDefault();
+        this.parentElement.classList.toggle('open');
+      }
+    });
+  });
+  window.addEventListener('scroll',()=>{navEl.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
+  // Scroll animations
+  const animObs=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');animObs.unobserve(entry.target);}});
+  },{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.fade-up,.slide-left,.slide-right,.fade-in,.stagger-children').forEach(el=>animObs.observe(el));document.getElementById('service-select').addEventListener('change',function(){this.classList.add('filled');});
+  // Form submits natively to Formspree, show success message after submission
+  // If you want to keep the user on the page (no redirect), use AJAX below:
+  document.getElementById('contact-form').addEventListener('submit', async function(e){
+    e.preventDefault();
+    const form = this;
+    const data = new FormData(form);
+    try {
+      const res = await fetch('https://formspree.io/f/mzdnkwzp', {
+        method:'POST',
+        body: data,
+        headers:{ 'Accept':'application/json' }
+      });
+      if(res.ok){
+        form.style.display='none';
+        document.getElementById('form-success').style.display='block';
+      } else {
+        alert('Something went wrong. Please email allison@aperture-visuals.com directly.');
+      }
+    } catch(err){
+      alert('Something went wrong. Please email allison@aperture-visuals.com directly.');
+    }
+  });
+</script>
+</body>
+</html>
