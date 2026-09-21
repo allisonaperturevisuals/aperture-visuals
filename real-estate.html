@@ -46,7 +46,7 @@
   .nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px);}
 
   /* PAGE HERO */
-  .page-hero{min-height:auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;margin-top:92px;background:var(--butter);padding-right:4rem;}
+  .page-hero{min-height:auto;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;margin-top:92px;background:var(--butter);}
   .page-hero-left{background:var(--butter);color:var(--ink-dark);padding:5rem 4rem;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;}
   
   .page-eyebrow{font-size:0.62rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--ink-light);margin-bottom:1.5rem;}
@@ -55,7 +55,7 @@
   .page-subtitle{font-size:0.95rem;line-height:1.9;color:var(--ink-dark-mid);max-width:400px;margin-top:2rem;}
   .hero-jump-btn{display:inline-flex;align-items:center;gap:0.6rem;margin-top:1.8rem;padding:0.85rem 1.8rem;border:1px solid var(--ink-dark);color:var(--ink-dark);text-decoration:none;font-family:var(--font-body);font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;transition:all 0.3s;background:transparent;}
   .hero-jump-btn:hover{background:var(--ink-dark);color:var(--butter);}
-  .page-hero-right{background:var(--butter);overflow:hidden;display:flex;aspect-ratio:3/2;}
+  .page-hero-right{background:var(--butter);overflow:hidden;}
   .page-hero-img{width:100%;height:100%;background:var(--butter);}
   .page-hero-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
   .page-hero-img-ph{color:rgba(28,28,28,0.18);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;text-align:center;line-height:2.2;}
@@ -72,11 +72,11 @@
   .house-deco svg{opacity:0.06;}
 
   /* INTRO + BRANDING */
-  .intro-section{padding:4rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;border-top:1px solid var(--line-strong);background:var(--butter) !important;}.intro-section > .branding-photo{order:-1;}
+  .intro-section{padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;background:var(--butter) !important;}.intro-section > .fade-up{padding:4rem;}.intro-section > .branding-photo{order:-1;}
   .intro-heading{font-family:var(--font-display);font-size:clamp(2rem,3vw,2.8rem);font-weight:300;line-height:1.2;color:var(--ink-dark);margin-bottom:1.8rem;}
   .intro-heading em{font-style:italic;color:var(--ink-dark-mid);}
   .intro-body{font-size:0.95rem;line-height:1.95;color:var(--ink-mid);margin-bottom:1.2rem;}
-  .branding-photo{width:100%;aspect-ratio:16/9;background:var(--butter);overflow:hidden;}
+  .branding-photo{width:100%;height:100%;min-height:100%;background:var(--butter);overflow:hidden;}
   .branding-photo img{width:100%;height:100%;object-fit:cover;display:block;}
   .branding-photo-ph{color:rgba(28,28,28,0.2);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;text-align:center;line-height:2.2;padding:1rem;}
 
@@ -96,7 +96,7 @@
   .service-item-row::before{content:'';width:3px;height:3px;border-radius:50%;background:var(--ink-light);flex-shrink:0;}
 
   /* DRONE SECTION */
-  .drone-section{padding:5rem 4rem 6rem;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}.drone-section > .drone-visual{order:2;}
+  .drone-section{position:relative;display:block;padding:0;border-top:1px solid var(--line);overflow:hidden;}.drone-visual{width:100%;height:clamp(420px,58vh,600px);background:#1a1a1a;overflow:hidden;}.drone-section > .fade-up{position:absolute;top:50%;left:clamp(1.5rem,5vw,5rem);transform:translateY(-50%);max-width:450px;background:rgba(245,239,200,0.9);padding:2.6rem 2.8rem;z-index:2;}.drone-section .drone-heading{color:var(--ink-dark);}.drone-section .drone-heading em{color:var(--ink-dark-mid);}.drone-section .drone-body{color:var(--ink-dark-mid);}.drone-section .section-label{color:var(--ink-dark-mid);}.drone-section > .drone-visual{order:2;}
   .drone-visual{width:100%;aspect-ratio:16/9;background:var(--butter);overflow:hidden;display:flex;align-items:center;justify-content:center;}
   .drone-visual img{width:100%;height:100%;object-fit:cover;display:block;}
   .drone-visual-ph{color:rgba(28,28,28,0.18);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;text-align:center;line-height:2.2;}.drone-ph{display:flex;flex-direction:column;align-items:center;gap:1rem;padding:2rem;}.drone-ph svg{width:110px;height:auto;opacity:0.6;}.drone-ph span{font-size:0.66rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-dark-mid);}
@@ -214,7 +214,7 @@
   .guide-intro p{font-size:0.84rem;line-height:1.9;color:var(--ink-mid);margin-top:1.2rem;max-width:400px;}
   .guide-download{display:inline-flex;align-items:center;gap:0.8rem;padding:0.9rem 2rem;border:1px solid var(--ink);color:var(--ink);text-decoration:none;font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;font-family:var(--font-body);transition:all 0.3s;margin-top:2rem;}
   .guide-download:hover{background:var(--ink);color:var(--cream);}
-  .guide-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+  .guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
   .guide-card{background:#0f0f0f;padding:2rem 1.8rem;border:1px solid var(--line);}
   .guide-card:nth-child(even){background:var(--butter);}.guide-card:nth-child(even) .guide-card-num{color:var(--ink-dark-mid);}.guide-card:nth-child(even) .guide-card-name{color:var(--ink-dark);}.guide-card:nth-child(even) .guide-item{color:var(--ink-dark-mid);border-top-color:rgba(28,28,28,0.15);}.guide-card:nth-child(even) .guide-item::before{background:var(--ink-dark-mid);}
   .guide-card-num{font-family:var(--font-display);font-size:2rem;font-weight:300;color:var(--ink-light);line-height:1;margin-bottom:1rem;}
@@ -253,7 +253,7 @@
   @media(max-width:1100px){.services-grid{grid-template-columns:repeat(2,1fr)}.guide-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:900px){
         nav{padding:0.6rem 0;}
-    .nav-toggle{display:flex;left:1.5rem;right:auto;} body{padding-top:80px;}
+    .nav-toggle{display:flex;left:1.5rem;right:auto;} body{padding-top:54px;}
     .nav-logo{padding:0.7rem 3rem 0;font-size:1.25rem;}
     nav.scrolled{padding:0 0 0.5rem;}
     .nav-links{display:none;flex-direction:column;gap:0;width:100%;margin-bottom:0;border-top:1px solid var(--line);padding-top:0.5rem;}
@@ -268,10 +268,10 @@
     .nav-dropdown:hover .dropdown-menu,.nav-dropdown.open .dropdown-menu{display:flex;}
     .nav-dropdown>a::after{display:none;}
     .nav-dropdown .dropdown-menu{display:none !important;}
-    .page-hero{grid-template-columns:1fr;padding-right:0;}
+    .page-hero{grid-template-columns:1fr;padding-right:0;margin-top:0;}
     .page-hero-right{min-height:50vw;}
     .page-hero-left{padding:2.75rem 1.5rem 2rem;}
-    .intro-section,.drone-section{grid-template-columns:1fr;gap:1.5rem;padding:2.75rem 0;}.intro-section > .fade-up,.drone-section > .fade-up{padding:0 1.5rem;}.intro-section{padding-top:0;border-top:none;}
+    .intro-section,.drone-section{grid-template-columns:1fr;gap:1.5rem;padding:2.75rem 0;}.intro-section > .fade-up,.drone-section > .fade-up{padding:0 1.5rem;}.intro-section{padding-top:0;border-top:none;}.page-hero-right{aspect-ratio:3/2;min-height:0;}.branding-photo{aspect-ratio:3/2;}
     .services-section{padding:2.75rem 1.5rem 3rem;}
     .services-grid{grid-template-columns:1fr;}
     .service-card{border-right:none;border-bottom:1px solid var(--line);}
@@ -424,24 +424,11 @@
 <nav id="nav">
   <a href="index.html" class="nav-logo">Aperture Visuals</a>
   <ul class="nav-links" id="nav-links">
-    <li class="nav-dropdown">
-      <a href="about.html">About</a>
-      <div class="dropdown-menu">
-        <a href="about.html">About Allison</a>
-        <div class="dropdown-divider"></div>
-        <a href="about.html#reviews">Reviews</a>
-      </div>
-    </li>
+    <li>
+      <a href="about.html">About</a></li>
     <li><a href="weddings.html">Weddings</a></li>
-    <li class="nav-dropdown">
-      <a href="real-estate.html" class="active">Real Estate</a>
-      <div class="dropdown-menu">
-        <a href="real-estate.html">Overview</a>
-        <a href="real-estate.html#calculator">Rate Calculator</a>
-        <div class="dropdown-divider"></div>
-        <a href="real-estate.html#set-the-scene">Set the Scene Guide</a>
-      </div>
-    </li>
+    <li>
+      <a href="real-estate.html" class="active">Real Estate</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
@@ -530,7 +517,7 @@
   </div>
   <div class="fade-up">
     <p class="section-label">Aerial coverage</p>
-    <h2 class="drone-heading">See the full<br><em>picture</em></h2>
+    <h2 class="drone-heading" style="display:flex;align-items:center;flex-wrap:wrap;gap:1.4rem;"><span>See the full<br><em>picture</em></span><svg style="height:52px;opacity:0.55;flex-shrink:0;" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" stroke="#1C1C1C" stroke-width="2"><circle cx="26" cy="26" r="15"/><circle cx="74" cy="26" r="15"/><circle cx="26" cy="74" r="15"/><circle cx="74" cy="74" r="15"/><line x1="37" y1="37" x2="63" y2="63" stroke-linecap="round"/><line x1="63" y1="37" x2="37" y2="63" stroke-linecap="round"/><rect x="42" y="42" width="16" height="16" rx="3"/></svg></h2>
     <p class="drone-body">Drone coverage transforms a listing. Whether it's a sprawling backyard, a lakefront property, or land with curb appeal that ground photos can't capture. Aerial photography and vertical video tell the whole story from above.</p>
     <p class="drone-body">Available as a standalone service or as part of any package. Every aerial shoot is conducted with full FAA compliance.</p>
   </div>
@@ -723,29 +710,6 @@
         <div class="guide-item">Stow beds, crates, and toys out of sight.</div>
         <div class="guide-item">Remove pet hair from furniture and surfaces.</div>
         <div class="guide-item">If possible, arrange for pets to be away during the shoot.</div>
-      </div>
-    </div>
-    <div class="guide-card">
-      <p class="guide-card-num">07</p>
-      <p class="guide-card-name">Exterior</p>
-      <div class="guide-items">
-        <div class="guide-item">Mow and edge the lawn and trim all bushes.</div>
-        <div class="guide-item">Remove cars from the driveway and front of the home.</div>
-        <div class="guide-item">Put trash bins in the garage or out of frame.</div>
-        <div class="guide-item">Organize patio furniture and remove yard clutter.</div>
-        <div class="guide-item">Ensure house numbers are clean and visible.</div>
-        <div class="guide-item">Clean pools, coil hoses neatly, and clear any snow or ice.</div>
-      </div>
-    </div>
-    <div class="guide-card">
-      <p class="guide-card-num">08</p>
-      <p class="guide-card-name">Day-of Tips</p>
-      <div class="guide-items">
-        <div class="guide-item">Plan for the shoot to take 1–3 hours depending on the property.</div>
-        <div class="guide-item">Be available by phone but feel free to step out.</div>
-        <div class="guide-item">Let me know about any rooms or features you'd like prioritized.</div>
-        <div class="guide-item">Keep the home in shoot-ready condition until I'm finished.</div>
-        <div class="guide-item">Questions? Reach out any time before the shoot day.</div>
       </div>
     </div>
   </div>
