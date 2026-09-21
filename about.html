@@ -46,21 +46,21 @@
   .nav-toggle.open span:nth-child(2){opacity:0;}
   .nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px);}
 
-  .page-hero{min-height:50vh;display:grid;grid-template-columns:1fr 1fr;margin-top:92px;}
+  .page-hero{min-height:58vh;display:grid;grid-template-columns:1fr 1fr;margin-top:92px;background:var(--butter);}
   .page-hero-left{background:var(--butter);color:var(--ink-dark);color:var(--ink-dark);padding:5rem 4rem;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;}
   .page-hero-left::before{content:'';position:absolute;top:-20%;right:-10%;width:70%;height:140%;background:radial-gradient(ellipse,rgba(232,220,148,0.5) 0%,transparent 65%);pointer-events:none;}
   .page-eyebrow{font-size:0.7rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--ink-light);margin-bottom:1.5rem;position:relative;z-index:1;}
   .page-title{font-family:var(--font-display);font-size:clamp(3rem,6vw,5.5rem);font-weight:300;line-height:0.95;color:var(--ink);position:relative;z-index:1;}
   .page-title em{font-style:italic;color:var(--ink-dark-mid);}
-  .page-hero-right{background:#1a1a1a;overflow:hidden;}
+  .page-hero-right{background:var(--butter);overflow:hidden;position:relative;}.page-hero-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
   .section-label{font-size:0.7rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-light);margin-bottom:1.5rem;}
 
   .about-intro{padding:6rem 4rem;display:grid;grid-template-columns:1fr 1.1fr;gap:7rem;align-items:start;border-top:1px solid var(--line);}
-  .photo-stack{position:relative;padding-bottom:3rem;padding-right:3rem;}
-  .photo-main{width:100%;aspect-ratio:3/4;background:#2a2a2a;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+  .photo-stack{position:relative;}
+  .photo-main{width:100%;aspect-ratio:2/3;background:var(--butter);overflow:hidden;display:flex;align-items:center;justify-content:center;}
   .photo-main img{width:100%;height:100%;object-fit:cover;}
   .photo-placeholder{color:rgba(28,28,28,0.18);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;text-align:center;line-height:2.2;padding:1rem;}
-  .photo-accent{position:absolute;bottom:0;right:0;width:52%;aspect-ratio:4/5;background:#d8d2c4;border:4px solid var(--cream);overflow:hidden;display:flex;align-items:center;justify-content:center;}
+  .photo-accent{position:absolute;bottom:0;right:0;width:52%;aspect-ratio:5/6;background:#d8d2c4;border:4px solid var(--cream);overflow:hidden;display:flex;align-items:center;justify-content:center;}
   .photo-accent img{width:100%;height:100%;object-fit:cover;}
   .photo-accent-ph{color:rgba(28,28,28,0.15);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;text-align:center;line-height:2;}
   .about-text{padding-top:1rem;}
@@ -290,16 +290,13 @@
     <p class="page-eyebrow">Grand Rapids, Michigan</p>
     <h1 class="page-title">Allison <em>Kroes</em></h1>
   </div>
-  <div class="page-hero-right"></div>
+  <div class="page-hero-right"><img src="images/about-branding.jpg" alt="Allison Kroes - Aperture Visuals" style="width:100%;height:100%;object-fit:cover;object-position:center;"></div>
 </section>
 
 <section class="about-intro mobile-hide">
   <div class="photo-stack slide-left">
     <div class="photo-main">
       <img src="images/about-allison.jpg" alt="Allison Kroes" style="width:100%;height:100%;object-fit:cover;">
-    </div>
-    <div class="photo-accent">
-      <img src="images/about-branding.jpg" alt="Allison Kroes - Aperture Visuals" style="width:100%;height:100%;object-fit:cover;">
     </div>
   </div>
   <div class="about-text slide-right">
@@ -349,10 +346,10 @@
       <div><p class="timeline-year">Today</p><p class="timeline-event">Aperture Visuals</p><p class="timeline-detail">Now I bring a cinematic eye to weddings and real estate, telling stories with intention and beauty for clients across West Michigan and beyond.</p></div>
     </div>
   </div>
-<div class="deco-float" style="bottom:2rem;right:3rem;"><svg style="height:46px;opacity:0.45;" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="27.5" cy="27.5" r="22" stroke="#b8a070" stroke-width="1.5"/><line x1="27.5" y1="5.5" x2="20" y2="27.5" stroke="#b8a070" stroke-width="1.2" stroke-linecap="round"/><line x1="46.5" y1="14" x2="27.5" y2="22" stroke="#b8a070" stroke-width="1.2" stroke-linecap="round"/><line x1="49.5" y1="36" x2="30" y2="30" stroke="#b8a070" stroke-width="1.2" stroke-linecap="round"/><line x1="27.5" y1="49.5" x2="35" y2="27.5" stroke="#b8a070" stroke-width="1.2" stroke-linecap="round"/><line x1="8.5" y1="41" x2="27.5" y2="33" stroke="#b8a070" stroke-width="1.2" stroke-linecap="round"/><line x1="5.5" y1="19" x2="25" y2="25" stroke="#b8a070" stroke-width="1.2" stroke-linecap="round"/><circle cx="27.5" cy="27.5" r="7" stroke="#b8a070" stroke-width="1.2"/></svg></div></section>
+</section>
 
 <section class="demo-reel fade-up mobile-hide" style="position:relative;">
-  <div class="deco-float" style="top:2rem;right:4rem;"><svg style="height:40px;opacity:0.45;" viewBox="0 0 70 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="10" width="60" height="30" rx="3" stroke="#b8a070" stroke-width="1.5"/><rect x="9" y="15" width="6" height="6" rx="1" stroke="#b8a070" stroke-width="1"/><rect x="9" y="29" width="6" height="6" rx="1" stroke="#b8a070" stroke-width="1"/><rect x="55" y="15" width="6" height="6" rx="1" stroke="#b8a070" stroke-width="1"/><rect x="55" y="29" width="6" height="6" rx="1" stroke="#b8a070" stroke-width="1"/><line x1="22" y1="11" x2="22" y2="39" stroke="#b8a070" stroke-width="1"/><line x1="36" y1="11" x2="36" y2="39" stroke="#b8a070" stroke-width="1"/><line x1="50" y1="11" x2="50" y2="39" stroke="#b8a070" stroke-width="1"/><polygon points="40,20 40,30 48,25" stroke="#b8a070" stroke-width="1" fill="none"/></svg></div>
+  
   <p class="section-label">Showreel</p>
   <h2 class="reel-title">Demo <em>reel</em></h2>
   <div class="reel-box">

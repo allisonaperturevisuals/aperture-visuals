@@ -47,8 +47,8 @@
   .nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px);}
 
   /* HERO */
-  .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
-  .hero-left{display:flex;flex-direction:column;justify-content:flex-end;padding:8rem 4rem 5rem;background:var(--butter);position:relative;}
+  .hero{min-height:auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;background:var(--butter);}
+  .hero-left{display:flex;flex-direction:column;justify-content:center;padding:5rem 4rem;background:var(--butter);position:relative;}
   .hero-left::before{content:'';position:absolute;top:0;right:0;bottom:0;width:1px;background:var(--line-strong);}
   .hero-eyebrow{font-size:0.65rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--ink-dark-mid);margin-bottom:2rem;}
   .hero-title{font-family:var(--font-display);font-size:clamp(3.5rem,6vw,6rem);font-weight:300;line-height:0.95;color:var(--ink-dark);margin-bottom:2.5rem;}
@@ -56,8 +56,8 @@
   .hero-desc{font-size:0.85rem;line-height:1.9;color:var(--ink-mid);max-width:380px;margin-bottom:3rem;}
   .hero-cta{display:inline-flex;align-items:center;gap:1rem;color:var(--ink);text-decoration:none;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;border-bottom:1px solid var(--ink-light);padding-bottom:0.4rem;transition:all 0.3s;width:fit-content;}
   .hero-cta:hover{border-color:var(--ink);gap:1.5rem;}
-  .hero-right{background:#1a1a1a;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
-  .hero-photo{width:100%;height:100%;background:#e8e2d4;display:flex;align-items:center;justify-content:center;}
+  .hero-right{background:var(--butter);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;aspect-ratio:16/9;}
+  .hero-photo{width:100%;height:100%;background:var(--butter);display:flex;align-items:center;justify-content:center;}
   .hero-photo img{width:100%;height:100%;object-fit:cover;}
   .hero-photo-ph{color:rgba(28,28,28,0.2);font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;text-align:center;line-height:2.2;padding:2rem;}
 
@@ -69,7 +69,7 @@
   .stat-label{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-light);}
 
   /* SERVICES */
-  .services{padding:7rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:0;}
+  .services{padding:7rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:0;background:radial-gradient(circle at top right,rgba(245,239,200,0.12) 0%,rgba(20,20,20,0) 55%),#141414;}
   .services-intro{padding-right:6rem;border-right:1px solid var(--line);}
   .section-label{font-size:0.62rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-light);margin-bottom:2rem;}
   .section-title{font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.15;color:var(--ink);margin-bottom:1.5rem;}
@@ -83,15 +83,15 @@
   .service-desc{font-size:0.72rem;letter-spacing:0.05em;color:var(--ink-light);line-height:1.7;}
 
   /* FEATURED */
-  .featured{padding:4rem 4rem 7rem;border-top:1px solid var(--line);}
+  .featured{padding:4rem 4rem 7rem;border-top:1px solid var(--line);background:radial-gradient(circle at bottom left,rgba(245,239,200,0.14) 0%,rgba(20,20,20,0) 55%),#141414;}
   .featured-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;}
   .view-all{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-light);text-decoration:none;border-bottom:1px solid var(--line-strong);padding-bottom:0.25rem;transition:all 0.3s;}
   .view-all:hover{color:var(--ink);border-color:var(--ink);}
-  .featured-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2px;}
-  .featured-item{position:relative;overflow:hidden;background:#e8e2d4;cursor:pointer;text-decoration:none;display:block;}
-  .featured-item.tall{aspect-ratio:3/4;}
-  .featured-item.square{aspect-ratio:1/1;}
-  .featured-item-inner{position:absolute;inset:0;background:#ddd8cc;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);}
+  .featured-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--butter);}
+  .featured-item{position:relative;overflow:hidden;background:var(--butter);cursor:pointer;text-decoration:none;display:block;}
+  .featured-item.tall{aspect-ratio:3/2;}
+  .featured-item.square{aspect-ratio:3/2;}
+  .featured-item-inner{position:absolute;inset:0;background:var(--butter);display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);}
   .featured-item:hover .featured-item-inner{transform:scale(1.04);}
   .featured-item-inner img{width:100%;height:100%;object-fit:cover;object-position:center;}
   .placeholder-text{text-align:center;color:rgba(28,28,28,0.2);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;line-height:2.2;}
@@ -386,7 +386,7 @@
 
 <section class="hero">
   <div class="hero-left">
-    <div class="deco-float" style="top:2rem;right:3rem;"><svg style="height:48px;opacity:0.45;" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="18" width="58" height="36" rx="5" stroke="#b8a070" stroke-width="1.5"/><circle cx="36" cy="36" r="12" stroke="#b8a070" stroke-width="1.5"/><circle cx="36" cy="36" r="6" stroke="#b8a070" stroke-width="1"/><rect x="24" y="12" width="14" height="8" rx="2" stroke="#b8a070" stroke-width="1.5"/><line x1="62" y1="10" x2="66" y2="6" stroke="#b8a070" stroke-width="1.2" stroke-linecap="round"/><line x1="65" y1="15" x2="70" y2="13" stroke="#b8a070" stroke-width="1.2" stroke-linecap="round"/><line x1="63" y1="20" x2="68" y2="20" stroke="#b8a070" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+    
     <p class="hero-eyebrow">Grand Rapids, Michigan · Cinematic Storytelling</p>
     <h1 class="hero-title">Stories<br>worth <em>telling</em></h1>
     <p class="hero-desc">Weddings and real estate, every frame crafted with intention, passion, and grace.</p>
@@ -402,7 +402,7 @@
 <section class="stats stagger-children">
   <div class="stat-item"><p class="stat-num">4M+</p><p class="stat-label">Views</p></div>
   <div class="stat-item"><p class="stat-num">40K+</p><p class="stat-label">Followers</p></div>
-  <div class="deco-float" style="right:3rem;top:50%;transform:translateY(-50%);"><svg style="height:46px;opacity:0.45;" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30" cy="30" r="24" stroke="#b8a070" stroke-width="1.5"/><circle cx="30" cy="30" r="16" stroke="#b8a070" stroke-width="1"/><circle cx="30" cy="30" r="8" stroke="#b8a070" stroke-width="1.2"/><circle cx="30" cy="30" r="2.5" fill="#8a7060" opacity="0.5"/><line x1="30" y1="6" x2="30" y2="2" stroke="#b8a070" stroke-width="1.2" stroke-linecap="round"/><line x1="54" y1="30" x2="58" y2="30" stroke="#b8a070" stroke-width="1.2" stroke-linecap="round"/><line x1="6" y1="30" x2="2" y2="30" stroke="#b8a070" stroke-width="1.2" stroke-linecap="round"/><line x1="30" y1="54" x2="30" y2="58" stroke="#b8a070" stroke-width="1.2" stroke-linecap="round"/></svg></div><div class="stat-item"><p class="stat-num">10+</p><p class="stat-label">Years Behind a Camera</p></div>
+  <div class="stat-item"><p class="stat-num">10+</p><p class="stat-label">Years Behind a Camera</p></div>
 </section>
 
 <section class="services mobile-hide">
@@ -425,11 +425,11 @@
   </div>
   <div class="featured-grid">
     <a href="weddings.html" class="featured-item tall fade-up">
-      <div class="featured-item-inner"><img src="images/featured-wedding.jpg" alt="Wedding Films" style="width:100%;height:100%;object-fit:cover;"></div>
+      <div class="featured-item-inner"><img src="images/featured-re.jpg" alt="Wedding Films" style="width:100%;height:100%;object-fit:cover;"></div>
       <div class="featured-overlay"><span class="featured-label">Wedding Films</span></div>
     </a>
     <a href="real-estate.html" class="featured-item square fade-up">
-      <div class="featured-item-inner"><img src="images/featured-re.jpg" alt="Real Estate" style="width:100%;height:100%;object-fit:cover;"></div>
+      <div class="featured-item-inner"><img src="images/featured-wedding.jpg" alt="Real Estate" style="width:100%;height:100%;object-fit:cover;"></div>
       <div class="featured-overlay"><span class="featured-label">Real Estate</span></div>
     </a>
   </div>

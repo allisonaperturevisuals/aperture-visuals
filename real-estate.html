@@ -46,7 +46,7 @@
   .nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px);}
 
   /* PAGE HERO */
-  .page-hero{min-height:60vh;display:grid;grid-template-columns:1fr 1fr;margin-top:92px;}
+  .page-hero{min-height:auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;margin-top:92px;background:var(--butter);}
   .page-hero-left{background:var(--butter);color:var(--ink-dark);padding:5rem 4rem;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;}
   .page-hero-left::before{content:'';position:absolute;top:-20%;right:-10%;width:70%;height:140%;background:radial-gradient(ellipse,rgba(232,220,148,0.5) 0%,transparent 65%);pointer-events:none;}
   .page-eyebrow{font-size:0.62rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--ink-light);margin-bottom:1.5rem;}
@@ -55,9 +55,9 @@
   .page-subtitle{font-size:0.95rem;line-height:1.9;color:var(--ink-dark-mid);max-width:400px;margin-top:2rem;}
   .hero-jump-btn{display:inline-flex;align-items:center;gap:0.6rem;margin-top:1.8rem;padding:0.85rem 1.8rem;border:1px solid var(--ink-dark);color:var(--ink-dark);text-decoration:none;font-family:var(--font-body);font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;transition:all 0.3s;background:transparent;}
   .hero-jump-btn:hover{background:var(--ink-dark);color:var(--butter);}
-  .page-hero-right{background:#1a1a1a;overflow:hidden;}
-  .page-hero-img{width:100%;height:100%;background:#e8e2d4;}
-  .page-hero-img img{width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block;}
+  .page-hero-right{background:var(--butter);overflow:hidden;display:flex;aspect-ratio:3/2;}
+  .page-hero-img{width:100%;height:100%;background:var(--butter);}
+  .page-hero-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
   .page-hero-img-ph{color:rgba(28,28,28,0.18);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;text-align:center;line-height:2.2;}
 
   /* SHARED */
@@ -72,16 +72,16 @@
   .house-deco svg{opacity:0.06;}
 
   /* INTRO + BRANDING */
-  .intro-section{padding:6rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center;border-top:1px solid var(--line-strong);background:var(--butter) !important;}
+  .intro-section{padding:4rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;border-top:1px solid var(--line-strong);background:var(--butter) !important;}
   .intro-heading{font-family:var(--font-display);font-size:clamp(2rem,3vw,2.8rem);font-weight:300;line-height:1.2;color:var(--ink-dark);margin-bottom:1.8rem;}
   .intro-heading em{font-style:italic;color:var(--ink-dark-mid);}
   .intro-body{font-size:0.95rem;line-height:1.95;color:var(--ink-mid);margin-bottom:1.2rem;}
-  .branding-photo{width:100%;aspect-ratio:3/2;background:#2a2a2a;overflow:hidden;}
+  .branding-photo{width:100%;aspect-ratio:16/9;background:var(--butter);overflow:hidden;}
   .branding-photo img{width:100%;height:100%;object-fit:cover;display:block;}
   .branding-photo-ph{color:rgba(28,28,28,0.2);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;text-align:center;line-height:2.2;padding:1rem;}
 
   /* SERVICES GRID */
-  .services-section{padding:5rem 4rem 6rem;border-top:1px solid var(--line);background:#1a1a1a;}
+  .services-section{padding:5rem 4rem 6rem;border-top:1px solid var(--line);background:radial-gradient(circle at top left,rgba(245,239,200,0.18) 0%,transparent 55%),#1a1a1a;}
   .services-heading{font-family:var(--font-display);font-size:clamp(2rem,3vw,2.8rem);font-weight:300;line-height:1.15;color:var(--ink);margin-top:1rem;margin-bottom:3.5rem;}
   .services-heading em{font-style:italic;color:var(--ink-light);}
   .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);}
@@ -96,10 +96,10 @@
   .service-item-row::before{content:'';width:3px;height:3px;border-radius:50%;background:var(--ink-light);flex-shrink:0;}
 
   /* DRONE SECTION */
-  .drone-section{padding:5rem 4rem 6rem;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center;}
-  .drone-visual{width:100%;aspect-ratio:16/9;background:#2a2a2a;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+  drone-section gap 7->4align-items:center;}
+  .drone-visual{width:100%;aspect-ratio:16/9;background:var(--butter);overflow:hidden;display:flex;align-items:center;justify-content:center;}
   .drone-visual img{width:100%;height:100%;object-fit:cover;display:block;}
-  .drone-visual-ph{color:rgba(28,28,28,0.18);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;text-align:center;line-height:2.2;}
+  .drone-visual-ph{color:rgba(28,28,28,0.18);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;text-align:center;line-height:2.2;}.drone-ph{display:flex;flex-direction:column;align-items:center;gap:1rem;padding:2rem;}.drone-ph svg{width:110px;height:auto;opacity:0.6;}.drone-ph span{font-size:0.66rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-dark-mid);}
   .drone-heading{font-family:var(--font-display);font-size:clamp(2rem,3vw,2.8rem);font-weight:300;line-height:1.15;color:var(--ink);margin-bottom:1.5rem;}
   .drone-heading em{font-style:italic;color:var(--ink-light);}
   .drone-body{font-size:0.84rem;line-height:1.95;color:var(--ink-mid);margin-bottom:1.2rem;}
@@ -128,7 +128,7 @@
   .sizes{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
   .size-btn{color:var(--ink-dark);border:1px solid var(--line-strong);background:transparent;border-radius:0;padding:1rem 0.8rem;text-align:left;cursor:pointer;font-family:var(--font-body);color:var(--ink);transition:all 0.2s;}
   .size-btn:hover{border-color:var(--ink-mid);}
-  .size-btn.active{border-color:var(--ink);background:#1a1a1a;}
+  .size-btn.active{border-color:var(--ink-dark);background:rgba(28,28,28,0.06);}
   .size-btn .sz-label{font-weight:500;font-size:0.8rem;display:block;margin-bottom:0.2rem;}
   .size-btn .sz-sub{font-size:0.68rem;color:var(--ink-light);}
   .size-btn.active .sz-sub{color:var(--ink-mid);}
@@ -137,7 +137,7 @@
   .pkgs{display:flex;flex-direction:column;gap:8px;}
   .pkg-btn{display:grid;grid-template-columns:20px 1fr auto;gap:1rem;align-items:start;border:1px solid var(--line-strong);background:transparent;padding:1.2rem 1.2rem;cursor:pointer;font-family:var(--font-body);color:var(--ink-dark);text-align:left;width:100%;transition:all 0.2s;}
   .pkg-btn:hover{border-color:var(--ink-mid);}
-  .pkg-btn.active{border-color:var(--ink);background:#1a1a1a;}
+  .pkg-btn.active{border-color:var(--ink-dark);background:rgba(28,28,28,0.06);}
   .radio{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--line-strong);position:relative;flex-shrink:0;margin-top:2px;transition:border-color 0.2s;}
   .pkg-btn.active .radio{border-color:var(--ink-dark);}
   .pkg-btn.active .radio::after{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--ink);}
@@ -209,14 +209,14 @@
      ============================================================ */
   .guide-section{padding:5rem 4rem 7rem;border-top:1px solid var(--line);background:#1a1a1a;position:relative;overflow:hidden;}
   .guide-section::after{content:'';position:absolute;top:0;right:0;width:500px;height:500px;background:radial-gradient(circle at top right,rgba(245,239,200,0.35) 0%,transparent 65%);pointer-events:none;}
-  .guide-intro{display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:end;margin-bottom:5rem;}
+  .guide-intro{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:5rem;}
   .guide-intro-text{}
   .guide-intro p{font-size:0.84rem;line-height:1.9;color:var(--ink-mid);margin-top:1.2rem;max-width:400px;}
   .guide-download{display:inline-flex;align-items:center;gap:0.8rem;padding:0.9rem 2rem;border:1px solid var(--ink);color:var(--ink);text-decoration:none;font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;font-family:var(--font-body);transition:all 0.3s;margin-top:2rem;}
   .guide-download:hover{background:var(--ink);color:var(--cream);}
-  .guide-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+  .guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
   .guide-card{background:#0f0f0f;padding:2rem 1.8rem;border:1px solid var(--line);}
-  .guide-card:nth-child(even){background:var(--butter);}
+  .guide-card:nth-child(even){background:var(--butter);}.guide-card:nth-child(even) .guide-card-num{color:var(--ink-dark-mid);}.guide-card:nth-child(even) .guide-card-name{color:var(--ink-dark);}.guide-card:nth-child(even) .guide-item{color:var(--ink-dark-mid);border-top-color:rgba(28,28,28,0.15);}.guide-card:nth-child(even) .guide-item::before{background:var(--ink-dark-mid);}
   .guide-card-num{font-family:var(--font-display);font-size:2rem;font-weight:300;color:var(--ink-light);line-height:1;margin-bottom:1rem;}
   .guide-card-name{font-family:var(--font-display);font-size:1.35rem;font-weight:300;color:var(--ink);margin-bottom:1.2rem;}
   .guide-items{display:flex;flex-direction:column;gap:0;}
@@ -225,7 +225,7 @@
 
   /* GALLERY */
   .gallery{padding:4rem 4rem 7rem;border-top:1px solid var(--line);}
-  .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:3rem;}
+  .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:3rem;}.listings-sub{font-size:0.82rem;color:var(--ink-mid);margin-top:0.9rem;}.listings-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem;}.listing-card{display:block;text-decoration:none;background:var(--butter);border:1px solid var(--line-strong);overflow:hidden;transition:transform .4s;}.listing-card:hover{transform:translateY(-4px);}.listing-cover{aspect-ratio:3/2;overflow:hidden;background:var(--butter);}.listing-cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(0.25,0.46,0.45,0.94);}.listing-card:hover .listing-cover img{transform:scale(1.05);}.listing-body{padding:1.3rem 1.5rem 0.3rem;}.listing-name{display:block;font-family:var(--font-display);font-size:1.5rem;font-weight:300;color:var(--ink-dark);}.listing-meta{display:block;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-dark-mid);margin-top:0.35rem;}.listing-cta{display:inline-block;padding:0.4rem 1.5rem 1.4rem;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dark);}
   .gitem{overflow:hidden;background:#2a2a2a;display:flex;align-items:center;justify-content:center;}
   .gitem.landscape{aspect-ratio:16/9;grid-column:span 2;}
   .gitem.portrait{aspect-ratio:4/5;}
@@ -281,7 +281,7 @@
     .guide-intro{grid-template-columns:1fr;gap:2rem;margin-bottom:3rem;}
     .guide-grid{grid-template-columns:1fr;}
     .gallery{padding:4rem 1.5rem 6rem;}
-    .gallery-grid{grid-template-columns:1fr 1fr;}
+    .gallery-grid{grid-template-columns:1fr 1fr;}.listings-grid{grid-template-columns:1fr;}
     .gitem.landscape{grid-column:1/-1;}
     .gitem.portrait{aspect-ratio:1/1;}
     .cta-band{grid-template-columns:1fr;padding:4rem 1.5rem;gap:2rem;}
@@ -526,8 +526,7 @@
 
 <section class="drone-section mobile-hide">
   <div class="drone-visual slide-left">
-    <!-- REPLACE: <img src="drone-aerial.jpg" alt="Aerial drone"> -->
-    <div class="drone-visual-ph">Aerial / drone photo<br>images/drone-aerial.jpg</div>
+    <img src="images/drone-aerial.jpg" alt="Aerial drone coverage - Aperture Visuals" style="width:100%;height:100%;object-fit:cover;">
   </div>
   <div class="fade-up">
     <p class="section-label">Aerial coverage</p>
@@ -647,7 +646,7 @@
 <section class="guide-section fade-up mobile-hide" id="set-the-scene" style="position:relative;">
   <div class="guide-intro">
     <div class="guide-intro-text">
-      <div class="deco-float" style="top:2.5rem;right:4rem;"><svg style="height:48px;opacity:0.45;" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="18" width="58" height="36" rx="5" stroke="#b8a070" stroke-width="1.5"/><circle cx="36" cy="36" r="12" stroke="#b8a070" stroke-width="1.5"/><circle cx="36" cy="36" r="6" stroke="#b8a070" stroke-width="1"/><rect x="24" y="12" width="14" height="8" rx="2" stroke="#b8a070" stroke-width="1.5"/><line x1="62" y1="10" x2="66" y2="6" stroke="#b8a070" stroke-width="1.2" stroke-linecap="round"/><line x1="65" y1="15" x2="70" y2="13" stroke="#b8a070" stroke-width="1.2" stroke-linecap="round"/><line x1="63" y1="20" x2="68" y2="20" stroke="#b8a070" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+      
   <p class="section-label">Prep guide</p>
       <h2 class="section-title">Set the <em>Scene</em></h2>
       <p>A little preparation makes a big difference in photos. Use this checklist to get each room shoot-ready before I arrive. The better the prep, the better the final images.</p>
@@ -755,13 +754,18 @@
 <section class="gallery fade-up mobile-hide">
   <p class="section-label">Property gallery</p>
   <h2 class="section-title" style="margin-top:1rem;">Recent <em>listings</em></h2>
-  <div class="gallery-grid">
-    <div class="gitem portrait"><!-- <img src="realestate-1.jpg" alt=""> --><div class="gitem-ph">Photo 1</div></div>
-    <div class="gitem landscape"><!-- <img src="realestate-2.jpg" alt=""> --><div class="gitem-ph">Photo 2, landscape</div></div>
-    <div class="gitem landscape"><!-- <img src="drone-aerial.jpg" alt=""> --><div class="gitem-ph">Drone/aerial photo</div></div>
-    <div class="gitem portrait"><!-- <img src="realestate-4.jpg" alt=""> --><div class="gitem-ph">Photo 4</div></div>
-    <div class="gitem portrait"><!-- <img src="realestate-5.jpg" alt=""> --><div class="gitem-ph">Photo 5</div></div>
-    <div class="gitem portrait"><!-- <img src="realestate-6.jpg" alt=""> --><div class="gitem-ph">Photo 6</div></div>
+  <p class="listings-sub">Click a listing to open its full photo gallery.</p>
+  <div class="listings-grid">
+    <a class="listing-card" href="#" rel="noopener">
+      <div class="listing-cover"><img src="images/re-hero.jpg" alt="Listing one"></div>
+      <div class="listing-body"><span class="listing-name">Listing One</span><span class="listing-meta">Full photo gallery</span></div>
+      <span class="listing-cta">View gallery &rarr;</span>
+    </a>
+    <a class="listing-card" href="#" rel="noopener">
+      <div class="listing-cover"><img src="images/re-branding.jpg" alt="Listing two"></div>
+      <div class="listing-body"><span class="listing-name">Listing Two</span><span class="listing-meta">Full photo gallery</span></div>
+      <span class="listing-cta">View gallery &rarr;</span>
+    </a>
   </div>
 </section>
 
