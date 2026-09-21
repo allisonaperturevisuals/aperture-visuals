@@ -46,13 +46,13 @@
   .nav-toggle.open span:nth-child(2){opacity:0;}
   .nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px);}
 
-  .page-hero{min-height:58vh;display:grid;grid-template-columns:1fr 1fr;margin-top:92px;background:var(--butter);}
+  .page-hero{min-height:auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;margin-top:92px;background:var(--butter);padding-right:4rem;}
   .page-hero-left{background:var(--butter);color:var(--ink-dark);color:var(--ink-dark);padding:5rem 4rem;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;}
-  .page-hero-left::before{content:'';position:absolute;top:-20%;right:-10%;width:70%;height:140%;background:radial-gradient(ellipse,rgba(232,220,148,0.5) 0%,transparent 65%);pointer-events:none;}
+  
   .page-eyebrow{font-size:0.7rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--ink-light);margin-bottom:1.5rem;position:relative;z-index:1;}
   .page-title{font-family:var(--font-display);font-size:clamp(3rem,6vw,5.5rem);font-weight:300;line-height:0.95;color:var(--ink);position:relative;z-index:1;}
   .page-title em{font-style:italic;color:var(--ink-dark-mid);}
-  .page-hero-right{background:var(--butter);overflow:hidden;position:relative;}.page-hero-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
+  .page-hero-right{background:var(--butter);position:relative;display:flex;align-items:center;justify-content:center;padding:2.5rem;}.page-hero-right img{position:static;max-width:100%;max-height:clamp(260px,38vh,360px);width:auto;height:auto;display:block;}
   .section-label{font-size:0.7rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-light);margin-bottom:1.5rem;}
 
   .about-intro{padding:6rem 4rem;display:grid;grid-template-columns:1fr 1.1fr;gap:7rem;align-items:start;border-top:1px solid var(--line);}
@@ -73,7 +73,7 @@
   .about-stat-num{font-family:var(--font-display);font-size:2.2rem;font-weight:300;color:var(--ink);line-height:1;margin-bottom:0.3rem;}
   .about-stat-label{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-light);}
 
-  .journey{padding:6rem 4rem 8rem;border-top:1px solid var(--line);background:#1a1a1a;display:grid;grid-template-columns:1fr 1.6fr;gap:7rem;align-items:start;}
+  .journey{padding:2.75rem 1.5rem 3.5rem;border-top:1px solid var(--line);background:radial-gradient(circle at bottom left,rgba(245,239,200,0.20) 0%,transparent 60%),#1a1a1a;display:grid;grid-template-columns:1fr;gap:1.8rem;align-items:start;}
   .journey-label-col{position:sticky;top:7rem;}
   @media(max-width:900px){.journey-label-col{position:static;}}
   .journey-title{font-family:var(--font-display);font-size:clamp(2.2rem,3.5vw,3.2rem);font-weight:300;line-height:1.15;color:var(--ink);margin-bottom:1.5rem;}
@@ -125,13 +125,13 @@
   .footer-links a{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-light);text-decoration:none;}
   .footer-links a:hover{color:var(--ink);}
   .footer-copy{font-size:0.68rem;color:var(--ink-light);}
-  @media(max-width:900px){footer{flex-direction:column;text-align:center;padding:2rem 1.5rem;gap:1rem;}}
+  @media(max-width:900px){footer{flex-direction:column;text-align:left;padding:2rem 1.5rem;gap:1rem;}}
   .cta-band{background:var(--butter);padding:5rem 4rem;display:grid;grid-template-columns:1fr auto;align-items:center;gap:4rem;border-top:1px solid var(--line-strong);}
   .cta-title{font-family:var(--font-display);font-size:clamp(2rem,3vw,3rem);font-weight:300;line-height:1.15;color:var(--ink-dark);}
   .cta-title em{font-style:italic;color:var(--ink-dark-mid);}
   .cta-btn{display:inline-flex;align-items:center;gap:1rem;padding:1rem 2.2rem;border:1px solid var(--ink-dark);color:var(--ink-dark);text-decoration:none;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;font-family:var(--font-body);white-space:nowrap;transition:all 0.3s;}
   .cta-btn:hover{background:var(--ink-dark);color:var(--butter);}
-  @media(max-width:900px){.cta-band{grid-template-columns:1fr;padding:4rem 1.5rem;gap:2rem;}}
+  @media(max-width:900px){.cta-band{grid-template-columns:1fr;padding:2.75rem 1.5rem;gap:2rem;}}
   @media(max-width:900px){
     .mobile-hide{display:none !important;}
     .deco-float{display:none !important;}
@@ -162,30 +162,30 @@
     .demo-reel .fade-up,
     .reviews-section .fade-up,
     .examples-section .fade-up,
-    .section-title, p.intro-body { text-align:center; }
+    .section-title, p.intro-body { text-align:left; }
 
     /* Center flex/grid containers */
     .stats{ justify-content:center; }
     .services-grid{ align-items:center; }
-    .nav-links{ text-align:center; }
-    .hero-jump-btn{ display:block; margin:1.5rem auto 0; text-align:center; width:fit-content; }
+    .nav-links{ text-align:left; }.nav-toggle{display:flex;left:1.5rem;right:auto;}.nav-links{display:none;flex-direction:column;gap:0;width:100%;margin-bottom:0;border-top:1px solid var(--line);padding-top:0.5rem;}.nav-links.open{display:flex;}.nav-links li{width:100%;}.nav-dropdown .dropdown-menu{display:none !important;}.nav-dropdown>a::after{display:none;}.journey-photo{margin:1.6rem auto 0.5rem;max-width:300px;background:var(--butter);overflow:hidden;}.journey-photo img{width:100%;height:auto;display:block;}
+    .hero-jump-btn{ display:block; margin:1.5rem auto 0; text-align:left; width:fit-content; }
     .quote-disclaimers{ align-items:center; }
     .quote-disclaimers p{ text-align:left; } /* keep bullet text left-aligned */
-    .calc-intro{ text-align:center; }
+    .calc-intro{ text-align:left; }
     .cta-actions{ justify-content:center; }
 
     /* About intro - stack photo below text */
     .about-intro{ grid-template-columns:1fr; }
     .about-photo{ order:2; margin-top:2rem; }
-    .about-text{ order:1; text-align:center; }
+    .about-text{ order:1; text-align:left; }
 
     /* Intro sections */
     .intro-section{ grid-template-columns:1fr; background:var(--butter);}
     .branding-photo{ display:none; } /* hide empty photo placeholder on mobile */
 
     /* Page hero text */
-    .page-hero{ grid-template-columns:1fr; }
-    .page-hero-left{ text-align:center; padding:3rem 1.5rem; }
+    .page-hero{ grid-template-columns:1fr; padding-right:0; }
+    .page-hero-left{ text-align:left; padding:3rem 1.5rem; }
     .page-hero-right{ display:none; } /* hide right photo column - empty anyway */
 
     /* Center the inline SVG graphics */
@@ -290,7 +290,7 @@
     <p class="page-eyebrow">Grand Rapids, Michigan</p>
     <h1 class="page-title">Allison <em>Kroes</em></h1>
   </div>
-  <div class="page-hero-right"><img src="images/about-branding.jpg" alt="Allison Kroes - Aperture Visuals" style="width:100%;height:100%;object-fit:cover;object-position:center;"></div>
+  <div class="page-hero-right"><img src="images/about-branding.jpg" alt="Allison Kroes - Aperture Visuals" style="max-width:100%;max-height:clamp(260px,38vh,360px);width:auto;height:auto;display:block;"></div>
 </section>
 
 <section class="about-intro mobile-hide">
@@ -306,11 +306,6 @@
     <p class="about-body">When it came time to choose a path in college, the answer was already clear. I pursued that passion at Grand Valley State University, where I earned a Bachelor of Science in Film, working across every phase of production from pre-production through post.</p>
     <p class="about-body">An internship at Coastline Studios opened the door to wedding videography and new professional workflows. I was later invited to continue there as a subcontractor after graduating. I also gained deep real estate media experience at Smallegan Real Estate, where I worked alongside agents firsthand and built a strong foundation in property photography and video.</p>
     <p class="about-body">My love for film naturally extended to social media. I've grown an audience of over 40,000 followers and accumulated more than 4 million views by creating content that people genuinely return to.</p>
-    <div class="about-stats">
-      <div class="about-stat"><p class="about-stat-num">4M+</p><p class="about-stat-label">Views</p></div>
-      <div class="about-stat"><p class="about-stat-num">40K+</p><p class="about-stat-label">Followers</p></div>
-      <div class="about-stat"><p class="about-stat-num">10+</p><p class="about-stat-label">Years Behind a Camera</p></div>
-    </div>
   </div>
 </section>
 
@@ -320,6 +315,7 @@
     <h2 class="journey-title">How I got <em>here</em></h2>
     <p class="journey-intro">A lifelong passion for capturing moments, shaped by education and real-world experience.</p>
   </div>
+  <div class="journey-photo"><img src="images/about-allison.jpg" alt="Allison Kroes"></div>
   <div class="timeline slide-right">
     <div class="timeline-item">
       <div class="timeline-marker"></div>
