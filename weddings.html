@@ -35,7 +35,7 @@
   .dropdown-divider{height:1px;background:var(--line);margin:0.4rem 0;}
   .nav-toggle{display:none;position:absolute;left:1.5rem;right:auto;top:50%;transform:translateY(-50%);flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
   .nav-toggle span{display:block;width:22px;height:1px;background:var(--ink);}
-  .page-hero{min-height:auto;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;margin-top:92px;background:var(--butter);}
+  .page-hero{min-height:auto;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;margin-top:72px;background:var(--butter);}
   .page-hero-left{background:var(--butter);color:var(--ink-dark);color:var(--ink-dark);padding:5rem 4rem;display:flex;flex-direction:column;justify-content:flex-end;}
   .page-eyebrow{font-size:0.68rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--ink-light);margin-bottom:1.5rem;}
   .page-title{font-family:var(--font-display);font-size:clamp(3rem,6vw,5.5rem);font-weight:300;line-height:0.95;color:var(--ink);}
@@ -59,12 +59,12 @@
   .branding-photo-ph{color:rgba(28,28,28,0.2);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;text-align:center;line-height:2.2;}
 
   /* CALCULATOR */
-  .calc-section{padding:5rem 4rem 7rem;border-top:1px solid var(--line-strong);background:radial-gradient(circle at bottom right,var(--butter-deep) 0%,transparent 48%),var(--butter) !important;}
+  .calc-section{padding:3.5rem 4rem 4rem;border-top:1px solid var(--line-strong);background:radial-gradient(circle at bottom right,var(--butter-deep) 0%,transparent 48%),var(--butter) !important;}
   .calc-intro{max-width:560px;margin-bottom:4rem;}
   .calc-intro p{font-size:0.94rem;line-height:1.9;color:var(--ink-mid);margin-top:1rem;}
-  .calc-wrap{display:grid;grid-template-columns:1fr 390px;gap:4rem;align-items:start;}
+  .calc-wrap{display:grid;grid-template-columns:1fr 390px;gap:4rem;align-items:start;}.calc-rings-mobile{display:none;}.calc-rings-desktop{display:flex;justify-content:center;margin-bottom:1.4rem;}
   .calc-steps{display:flex;flex-direction:column;}
-  .calc-step{padding:2.5rem 0;border-top:1px solid var(--line-strong);}
+  .calc-step{padding:1.4rem 0;}
   .calc-step:first-child{padding-top:0;border-top:none;}
   .step-header{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.5rem;}
   .step-num{font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink-light);}
@@ -88,9 +88,9 @@
   .pkg-btn:first-child{margin-top:0;}
   .pkg-btn:hover{background:rgba(28,28,28,0.08);}
   .pkg-btn.active{border:2px solid var(--ink-dark) !important;background:rgba(28,28,28,0.12);z-index:1;position:relative;margin:-1px 0;padding:1.4rem 2.5rem !important;}
-  .radio{width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(28,28,28,0.3);position:relative;flex-shrink:0;transition:border-color 0.2s;}
+  .radio{width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(28,28,28,0.55);position:relative;flex-shrink:0;transition:border-color 0.2s;}
   .pkg-btn.active .radio{border-color:var(--ink-dark);}
-  .pkg-btn.active .radio::after{content:'';position:absolute;inset:4px;border-radius:50%;background:var(--ink-dark);}
+  .pkg-btn.active .radio::after{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--ink-dark);}
   .pkg-name{font-family:var(--font-display);font-size:1.2rem;font-weight:300;display:block;color:var(--ink-dark);}
   .pkg-desc{font-size:0.8rem;color:var(--ink-dark-mid);display:block;margin-top:0.3rem;}
   .pkg-price{font-family:var(--font-display);font-size:1.1rem;font-weight:300;white-space:nowrap;color:var(--ink-dark);padding-right:1.5rem;}
@@ -118,7 +118,7 @@
   .quote-title{font-family:var(--font-display);font-size:1.5rem;font-weight:300;color:var(--ink);margin-bottom:0.3rem;}
   .quote-subtitle{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-light);margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--line);}
   .quote-lines{display:flex;flex-direction:column;margin-bottom:1.5rem;}
-  .quote-line{display:flex;justify-content:space-between;align-items:baseline;padding:0.75rem 0;border-bottom:1px dotted var(--line);font-size:0.84rem;}
+  .quote-line{display:flex;justify-content:space-between;align-items:baseline;padding:0.55rem 0;font-size:0.84rem;}
   .quote-line:last-child{border-bottom:none;}
   .ql-name{color:var(--ink-mid);}
   .ql-sub{font-size:0.7rem;color:var(--ink-light);display:block;margin-top:0.15rem;}
@@ -137,10 +137,10 @@
   .mb-total{font-family:var(--font-display);font-size:2rem;font-weight:300;}
   .mb-total small{display:block;font-family:var(--font-body);font-size:0.68rem;color:rgba(253,251,244,0.6);letter-spacing:0.1em;text-transform:uppercase;}
   .mb-cta{background:var(--butter);color:var(--ink);border:none;padding:0.8rem 1.5rem;font-family:var(--font-body);font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;white-space:nowrap;}
-  @media(max-width:900px){.mobile-bar{display:flex !important;z-index:50;}.mobile-bar.bar-visible{transform:translateY(0);}.calc-wrap{grid-template-columns:1fr}.quote-panel{display:none !important}}
+  @media(max-width:900px){.calc-rings-mobile{display:block;}.calc-rings-desktop{display:none;}.calc-step{padding-top:1.4rem;}.mobile-bar{display:flex !important;z-index:50;}.mobile-bar.bar-visible{transform:translateY(0);}.calc-wrap{grid-template-columns:1fr}.quote-panel{display:none !important}}
 
   /* VIDEO EXAMPLES */
-  .examples-section{padding:5rem 4rem 7rem;border-top:1px solid var(--line);background:#1a1a1a;}
+  .examples-section{padding:3.5rem 4rem 4rem;border-top:1px solid var(--line);background:#1a1a1a;}
   .examples-layout{display:grid;grid-template-columns:1fr;gap:2rem;margin-top:3rem;}.example-reel-frame{max-width:300px;margin:0 auto;}
   .examples-films{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
   .example-film{position:relative;}
@@ -185,13 +185,13 @@
   
     .page-hero{grid-template-columns:1fr;padding-right:0;margin-top:0;}
     .page-hero-right{min-height:50vw;}
-    .page-hero-left{padding:2.75rem 1.5rem 2rem;}
+    .page-hero-left{padding:2.2rem 1.5rem 2rem;}
     .intro-section{grid-template-columns:1fr;gap:1.5rem;padding:2rem 0 2.5rem;background:#1a1a1a;}.intro-section > .fade-up{padding:0 1.5rem;}
-    .calc-section{padding:2.75rem 1.5rem 3.5rem;}
-    .examples-section{padding:2.75rem 1.5rem 3.5rem;}
+    .calc-section{padding:2.2rem 1.5rem 3.5rem;}
+    .examples-section{padding:2.2rem 1.5rem 3.5rem;}
     .examples-layout{grid-template-columns:1fr;}
     .example-reel-frame{aspect-ratio:16/9;}
-    .cta-band{grid-template-columns:1fr;padding:2.75rem 1.5rem;gap:2rem;}
+    .cta-band{grid-template-columns:1fr;padding:2.2rem 1.5rem;gap:2rem;}
     footer{flex-direction:column;gap:1.2rem;text-align:left;padding:2rem 1.5rem;}.section-label,.section-title,.intro-heading,.intro-body,.calc-heading,.calc-body,.cta-title,.cta-body,.example-title,.example-desc,.package-name,.hero-eyebrow,.hero-title,.hero-body{text-align:left !important;}.intro-heading{display:block !important;text-align:left;}.intro-heading > span{display:block;}.intro-heading svg{position:absolute !important;top:0.5rem;right:1rem;height:58px !important;margin:0 !important;opacity:0.4;}.calc-intro{text-align:left;}.cta-actions{justify-content:center;}.cta-band .fade-up,.calc-intro,.examples-section .fade-up{text-align:left;}
   }
 
@@ -290,8 +290,8 @@
   .reviews-section .review-text { color:var(--ink-mid) !important; }
 
   /* ── CUSTOM RANGE SLIDER (visible on butter bg) ── */
-  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:rgba(28,28,28,0.25);outline:none;border-radius:2px;cursor:pointer;margin:10px 0;padding:12px 0;background-clip:content-box;}
-  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:50%;background:var(--ink-dark);cursor:pointer;border:2px solid var(--ink-dark);box-shadow:0 2px 8px rgba(0,0,0,0.25);margin-top:-11px;}
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:rgba(28,28,28,0.25);outline:none;border-radius:2px;cursor:pointer;margin:4px 0;padding:9px 0;background-clip:content-box;}
+  input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15);}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:50%;background:var(--ink-dark);cursor:pointer;border:2px solid var(--ink-dark);box-shadow:0 2px 8px rgba(0,0,0,0.25);margin-top:-11px;transition:transform 0.12s ease,box-shadow 0.12s ease;}
   input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--ink-dark);cursor:pointer;border:2px solid var(--ink-dark);}
   input[type=range]::-webkit-slider-runnable-track{height:2px;background:rgba(28,28,28,0.25);border-radius:2px;}
   input[type=range]::-moz-range-track{height:2px;background:rgba(28,28,28,0.25);border-radius:2px;}
@@ -329,20 +329,10 @@
   </div>
 </section>
 
-<section class="intro-section">
-  <div class="fade-up">
-    <p class="section-label">The experience</p>
-    <h2 class="intro-heading" style="display:flex;align-items:center;flex-wrap:nowrap;"><span>More than<br>a <em>highlight reel</em></span><svg style="display:block;height:110px;opacity:0.38;margin-left:1.8rem;flex-shrink:0;" viewBox="0 0 70 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="25" cy="28" r="16" stroke="#b8a070" stroke-width="1.3"/><circle cx="45" cy="28" r="16" stroke="#b8a070" stroke-width="1.3"/><polygon points="25,8 29,13 25,18 21,13" stroke="#b8a070" stroke-width="1.2" fill="none"/></svg></h2>
-    <p class="intro-body">Based in Grand Rapids and available throughout West Michigan and beyond, I work with you from the first inquiry through delivery to make sure the final film feels exactly right.</p>
-      <p class="intro-body">Every wedding is different, so every film is too. We'll talk through the moments that matter most to you, and I'll craft a keepsake you'll want to return to for years.</p>
-  </div>
-  <div class="branding-photo slide-right"><img src="images/weddings-branding.jpg" alt="Aperture Visuals" style="width:100%;height:100%;object-fit:cover;"></div>
-</section>
-
 <section class="calc-section fade-up" id="calculator">
   <div class="calc-intro">
     <p class="section-label">Build your package</p>
-    <h2 class="section-title">Wedding film <em>calculator</em></h2>
+    <h2 class="section-title" style="display:flex;align-items:center;gap:1.2rem;"><span>Wedding film <em>calculator</em></span><svg class="calc-rings-mobile" style="height:62px;opacity:0.4;flex-shrink:0;" viewBox="0 0 70 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="25" cy="28" r="16" stroke="#b8a070" stroke-width="1.2"/><circle cx="45" cy="28" r="16" stroke="#b8a070" stroke-width="1.2"/><polygon points="25,8 29,13 25,18 21,13" stroke="#b8a070" stroke-width="1.1" fill="none"/></svg></h2>
     <p>Select your film length, hours of coverage, and any add-ons. Your estimate updates instantly.</p>
   </div>
   <div class="calc-wrap">
@@ -368,7 +358,7 @@
         <div class="addons" id="addons"></div>
       </div>
     </div>
-    <aside class="quote-panel">
+    <div class="calc-right"><div class="calc-rings-desktop"><svg style="height:150px;opacity:0.4;" viewBox="0 0 70 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="25" cy="28" r="16" stroke="#b8a070" stroke-width="1.2"/><circle cx="45" cy="28" r="16" stroke="#b8a070" stroke-width="1.2"/><polygon points="25,8 29,13 25,18 21,13" stroke="#b8a070" stroke-width="1.1" fill="none"/></svg></div><aside class="quote-panel">
       <p class="quote-title">Your estimate</p>
       <p class="quote-subtitle">No obligation — confirmed on booking</p>
       <div class="quote-lines" id="quote-lines"></div>
@@ -383,7 +373,7 @@
         <p>Weddings outside a 60-mile radius of Grand Rapids will include a travel fee.</p>
         <p>Packages are subject to change.</p>
       </div>
-    </aside>
+    </aside></div>
   </div>
 </section>
 

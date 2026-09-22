@@ -39,14 +39,14 @@
   .dropdown-menu a:hover{color:var(--ink);background:#0f0f0f;}
   .dropdown-divider{height:1px;background:var(--line);margin:0.4rem 0;}
   .nav-logo{font-family:var(--font-display);font-size:1.55rem;font-weight:300;letter-spacing:0.14em;color:var(--ink);text-decoration:none;text-transform:uppercase;display:block;text-align:center;line-height:1;transition:font-size 0.3s ease;margin-bottom:0.35rem;}
-  nav.scrolled .nav-logo{font-size:1.2rem;}
+  nav.scrolled .nav-logo{padding:0.7rem 3rem 0;font-size:1.25rem;}
   .nav-toggle{display:none;position:absolute;left:1.5rem;right:auto;top:50%;transform:translateY(-50%);flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
   .nav-toggle span{display:block;width:22px;height:1px;background:var(--ink);transition:all 0.3s;}
   .nav-toggle.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px);}
   .nav-toggle.open span:nth-child(2){opacity:0;}
   .nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px);}
 
-  .page-hero{min-height:auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;margin-top:92px;background:var(--butter);padding-right:4rem;}
+  .page-hero{min-height:520px;display:grid;grid-template-columns:1fr 1fr;align-items:center;margin-top:72px;background:var(--butter);padding-right:4rem;position:relative;overflow:hidden;}.about-skyline{position:absolute;left:0;right:0;bottom:0;height:56%;opacity:0.55;pointer-events:none;z-index:0;}.page-hero-left,.page-hero-right{z-index:1;}
   .page-hero-left{background:var(--butter);color:var(--ink-dark);color:var(--ink-dark);padding:5rem 4rem;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;}
   
   .page-eyebrow{font-size:0.7rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--ink-light);margin-bottom:1.5rem;position:relative;z-index:1;}
@@ -55,7 +55,7 @@
   .page-hero-right{background:var(--butter);position:relative;display:flex;align-items:center;justify-content:center;padding:2.5rem;}.page-hero-right img{position:static;max-width:100%;max-height:clamp(260px,38vh,360px);width:auto;height:auto;display:block;}
   .section-label{font-size:0.7rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-light);margin-bottom:1.5rem;}
 
-  .about-intro{padding:6rem 4rem;display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:stretch;border-top:1px solid var(--line);}
+  .about-intro{padding:4rem 4rem;display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:stretch;border-top:1px solid var(--line);}
   .photo-stack{position:relative;}
   .photo-main{width:100%;height:100%;background:var(--butter);overflow:hidden;display:flex;align-items:center;justify-content:center;}
   .photo-main img{width:100%;height:100%;object-fit:cover;}
@@ -73,14 +73,14 @@
   .about-stat-num{font-family:var(--font-display);font-size:2.2rem;font-weight:300;color:var(--ink);line-height:1;margin-bottom:0.3rem;}
   .about-stat-label{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-light);}
 
-  .journey{padding:2.75rem 1.5rem 3.5rem;border-top:1px solid var(--line);background:radial-gradient(circle at bottom left,rgba(245,239,200,0.20) 0%,transparent 60%),#1a1a1a;display:grid;grid-template-columns:1fr;gap:1.8rem;align-items:start;}
+  .journey{padding:2.2rem 1.5rem 3.5rem;border-top:1px solid var(--line);background:radial-gradient(circle at bottom left,rgba(245,239,200,0.20) 0%,transparent 60%),#1a1a1a;display:grid;grid-template-columns:1fr;gap:1.8rem;align-items:start;}
   .journey-label-col{position:sticky;top:7rem;}
   @media(max-width:900px){.journey-label-col{position:static;}}
   .journey-title{font-family:var(--font-display);font-size:clamp(2.2rem,3.5vw,3.2rem);font-weight:300;line-height:1.15;color:var(--ink);margin-bottom:1.5rem;}
   .journey-title em{font-style:italic;color:var(--ink-light);}
   .journey-intro{font-size:0.95rem;line-height:1.9;color:var(--ink-mid);}
   .timeline{display:flex;flex-direction:column;}
-  .timeline-item{padding:2.5rem 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:start;}
+  .timeline-item{padding:1.4rem 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:1.6rem;align-items:start;}
   .timeline-item:first-child{padding-top:0;}
   .timeline-marker{width:7px;height:7px;border-radius:50%;background:var(--ink-light);margin-top:8px;flex-shrink:0;position:relative;}
   .timeline-marker::before{content:'';position:absolute;left:3px;top:15px;width:1px;height:calc(100% + 3rem);background:var(--line-strong);}
@@ -89,11 +89,11 @@
   .timeline-event{font-family:var(--font-display);font-size:1.4rem;font-weight:300;color:var(--ink);margin-bottom:0.5rem;}
   .timeline-detail{font-size:0.9rem;line-height:1.85;color:var(--ink-mid);}
 
-  .demo-reel{padding:5rem 4rem 7rem;border-top:1px solid var(--line);background:var(--butter);position:relative;overflow:hidden;}
+  .demo-reel{padding:3rem 4rem 1.5rem;border-top:1px solid var(--line);background:var(--butter);position:relative;overflow:hidden;}
   .demo-reel::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,220,148,0.35) 0%,transparent 60%);pointer-events:none;}
   .reel-title{font-family:var(--font-display);font-size:clamp(2.2rem,3.5vw,3.2rem);font-weight:300;color:var(--ink-dark);margin-top:1rem;position:relative;z-index:1;}
   .reel-title em{font-style:italic;color:var(--ink-dark-mid);}
-  .reel-box{background:#0f0f0f;aspect-ratio:16/9;max-width:760px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;border:1px solid var(--line-strong);position:relative;overflow:hidden;margin:2.5rem auto 0;z-index:1;}
+  .reel-box{background:#0f0f0f;aspect-ratio:16/9;max-width:760px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;border:1px solid var(--line-strong);position:relative;overflow:hidden;margin:1.5rem auto 0;z-index:1;}
   .play-btn{width:68px;height:68px;border-radius:50%;border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center;}
   .play-btn svg{width:22px;height:22px;fill:var(--ink-light);margin-left:4px;}
   .reel-note{font-size:0.75rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-light);}
@@ -131,7 +131,7 @@
   .cta-title em{font-style:italic;color:var(--ink-dark-mid);}
   .cta-btn{display:inline-flex;align-items:center;gap:1rem;padding:1rem 2.2rem;border:1px solid var(--ink-dark);color:var(--ink-dark);text-decoration:none;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;font-family:var(--font-body);white-space:nowrap;transition:all 0.3s;}
   .cta-btn:hover{background:var(--ink-dark);color:var(--butter);}
-  @media(max-width:900px){.cta-band{grid-template-columns:1fr;padding:2.75rem 1.5rem;gap:2rem;}}
+  @media(max-width:900px){.cta-band{grid-template-columns:1fr;padding:2.2rem 1.5rem;gap:2rem;}}
   @media(max-width:900px){
     .mobile-hide{display:none !important;}
     .deco-float{display:none !important;}
@@ -167,7 +167,7 @@
     /* Center flex/grid containers */
     .stats{ justify-content:center; }
     .services-grid{ align-items:center; }
-    .nav-links{ text-align:left; }.nav-toggle{display:flex;left:1.5rem;right:auto;}body{padding-top:54px;}.nav-links{display:none;flex-direction:column;gap:0;width:100%;margin-bottom:0;border-top:1px solid var(--line);padding-top:0.5rem;}.nav-links.open{display:flex;}.nav-links li{width:100%;}.nav-dropdown .dropdown-menu{display:none !important;}.nav-dropdown>a::after{display:none;}.journey-photo{margin:1.6rem auto 0.5rem;max-width:300px;background:var(--butter);overflow:hidden;}.journey-photo img{width:100%;height:auto;display:block;}
+    .nav-links{ text-align:left; }.nav-toggle{display:flex;left:1.5rem;right:auto;}body{padding-top:54px;}nav{padding:0.6rem 0;}.nav-links{display:none;flex-direction:column;gap:0;width:100%;margin-bottom:0;border-top:1px solid var(--line);padding-top:0.5rem;}.nav-links.open{display:flex;}.nav-links li{width:100%;}.nav-dropdown .dropdown-menu{display:none !important;}.nav-dropdown>a::after{display:none;}.journey-photo{margin:1.6rem auto 0.5rem;max-width:300px;background:var(--butter);overflow:hidden;}.journey-photo img{width:100%;height:auto;display:block;}
     .hero-jump-btn{ display:block; margin:1.5rem auto 0; text-align:left; width:fit-content; }
     .quote-disclaimers{ align-items:center; }
     .quote-disclaimers p{ text-align:left; } /* keep bullet text left-aligned */
@@ -184,7 +184,7 @@
     .branding-photo{ display:none; } /* hide empty photo placeholder on mobile */
 
     /* Page hero text */
-    .page-hero{ grid-template-columns:1fr; padding-right:0; margin-top:0;}
+    .page-hero{ grid-template-columns:1fr; padding-right:0; margin-top:0; min-height:auto;}.about-skyline{display:none;}
     .page-hero-left{ text-align:left; padding:3rem 1.5rem; }
     .page-hero-right{ display:none; } /* hide right photo column - empty anyway */
 
@@ -273,6 +273,7 @@
 </nav>
 
 <section class="page-hero">
+  <svg class="about-skyline" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polyline points="0,300 0,191 33,191 33,226 66,226 66,205 100,205 100,185 140,185 140,180 176,180 176,220 214,220 214,117 239,117 239,233 286,233 286,208 321,208 321,231 372,231 372,199 398,199 398,129 417,129 417,180 469,180 469,196 512,196 512,200 559,200 559,208 591,208 591,185 645,185 645,210 689,210 689,240 730,240 730,254 770,254 770,186 822,186 822,190 863,190 863,243 906,243 906,216 958,216 958,197 1010,197 1010,214 1036,214 1036,181 1064,181 1064,184 1103,184 1103,227 1137,227 1137,180 1178,180 1178,105 1200,105 1200,300" fill="#ddd39c"/><polyline points="0,300 0,209 43,209 43,220 82,220 82,233 113,233 113,211 139,211 139,251 166,251 166,264 211,264 211,212 238,212 238,201 277,201 277,209 308,209 308,122 330,122 330,214 356,214 356,216 398,216 398,223 432,223 432,200 467,200 467,204 499,204 499,249 521,249 521,213 549,213 549,223 583,223 583,144 601,144 601,136 627,136 627,247 666,247 666,255 696,255 696,265 734,265 734,210 780,210 780,264 805,264 805,245 846,245 846,204 892,204 892,213 918,213 918,259 955,259 955,111 974,111 974,151 994,151 994,257 1036,257 1036,240 1074,240 1074,220 1110,220 1110,157 1136,157 1136,244 1164,244 1164,116 1190,116 1190,205 1200,205 1200,300" fill="#c7b878"/><polyline points="0,300 0,173 23,173 23,159 45,159 45,179 68,179 68,266 88,266 88,221 127,221 127,160 151,160 151,229 179,229 179,169 202,169 202,227 221,227 221,232 252,232 252,232 276,232 276,157 300,157 300,270 333,270 333,229 352,229 352,247 384,247 384,261 407,261 407,221 446,221 446,225 484,225 484,216 521,216 521,271 542,271 542,253 582,253 582,251 607,251 607,231 645,231 645,177 669,177 669,167 690,167 690,228 713,228 713,221 742,221 742,259 766,259 766,232 796,232 796,232 825,232 825,254 843,254 843,255 868,255 868,216 889,216 889,242 926,242 926,257 958,257 958,266 998,266 998,246 1024,246 1024,227 1049,227 1049,272 1074,272 1074,237 1107,237 1107,269 1126,269 1126,255 1164,255 1164,218 1199,218 1199,254 1200,254 1200,300" fill="#a89a5e"/><line x1="11" y1="173" x2="11" y2="159" stroke="#8f8452" stroke-width="1.2"/><line x1="34" y1="159" x2="34" y2="145" stroke="#8f8452" stroke-width="1.2"/><line x1="56" y1="179" x2="56" y2="165" stroke="#8f8452" stroke-width="1.2"/><line x1="139" y1="160" x2="139" y2="146" stroke="#8f8452" stroke-width="1.2"/><line x1="190" y1="169" x2="190" y2="155" stroke="#8f8452" stroke-width="1.2"/><line x1="288" y1="157" x2="288" y2="143" stroke="#8f8452" stroke-width="1.2"/><line x1="657" y1="177" x2="657" y2="163" stroke="#8f8452" stroke-width="1.2"/><line x1="679" y1="167" x2="679" y2="153" stroke="#8f8452" stroke-width="1.2"/></svg>
   <div class="page-hero-left">
     <p class="page-eyebrow">Grand Rapids, Michigan</p>
     <h1 class="page-title">Allison <em>Kroes</em></h1>
@@ -289,10 +290,10 @@
   <div class="about-text slide-right">
     <p class="section-label">Filmmaker &amp; Cinematographer</p>
     <h2 class="about-heading">Capturing moments<br>that <em>last forever</em></h2>
-    <p class="about-body">I'm Allison Kroes, a filmmaker based in Grand Rapids, Michigan. From age 12, I would record anything and everything, fascinated by the ability to make a moment in time last forever. That early obsession never left me. It became a career.</p>
-    <p class="about-body">When it came time to choose a path in college, the answer was already clear. I pursued that passion at Grand Valley State University, where I earned a Bachelor of Science in Film, working across every phase of production from pre-production through post.</p>
-    <p class="about-body">An internship at Coastline Studios opened the door to wedding videography and new professional workflows. I was later invited to continue there as a subcontractor after graduating. I also gained deep real estate media experience at Smallegan Real Estate, where I worked alongside agents firsthand and built a strong foundation in property photography and video.</p>
-    <p class="about-body">My love for film naturally extended to social media. I've grown an audience of over 40,000 followers and accumulated more than 4 million views by creating content that people genuinely return to.</p>
+    <p class="about-body">Hi, I'm Allison! I've been recording pretty much everything since I was 12 &mdash; there was just something about a camera being able to freeze a moment and keep it forever. That obsession never really wore off, and somewhere along the way it turned into my whole career.</p>
+    <p class="about-body">So when it came time to pick a major, film was kind of a no-brainer. I studied it at Grand Valley State University and got my hands on every part of the process, from the first planning meeting all the way to the final edit.</p>
+    <p class="about-body">An internship at Coastline Studios pulled me into wedding videography, and I loved it enough to keep working with them after I graduated. I also spent a ton of time shooting real estate with Smallegan Real Estate &mdash; that's where I really learned how to make a property look its absolute best.</p>
+    <p class="about-body">That love of film spilled right over into social media, too. I've built an audience of 40,000+ followers and over 4 million views, just by making stuff people actually want to come back to.</p>
   </div>
 </section>
 

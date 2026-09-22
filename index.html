@@ -47,35 +47,35 @@
   .nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px);}
 
   /* HERO */
-  .hero{min-height:auto;display:grid;grid-template-columns:0.82fr 1.18fr;align-items:stretch;position:relative;overflow:hidden;background:var(--butter);margin-top:92px;}
+  .hero{min-height:auto;display:grid;grid-template-columns:0.9fr 1.1fr;align-items:start;position:relative;overflow:hidden;background:var(--butter);margin-top:72px;}
   .hero-left{display:flex;flex-direction:column;justify-content:center;padding:5rem 4rem;background:var(--butter);position:relative;}
   .hero-left::before{content:'';position:absolute;top:0;right:0;bottom:0;width:1px;background:var(--line-strong);}
-  .hero-eyebrow{font-size:0.65rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--ink-dark-mid);margin-bottom:2rem;}
-  .hero-title{font-family:var(--font-display);font-size:clamp(3.5rem,6vw,6rem);font-weight:300;line-height:0.95;color:var(--ink-dark);margin-bottom:2.5rem;}
+  .hero-eyebrow{font-size:0.65rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--ink-dark-mid);margin-bottom:1.2rem;}
+  .hero-title{font-family:var(--font-display);font-size:clamp(3.5rem,6vw,6rem);font-weight:300;line-height:0.95;color:var(--ink-dark);margin-bottom:1.4rem;}
   .hero-title em{font-style:italic;color:var(--ink-dark-mid);}
-  .hero-desc{font-size:0.85rem;line-height:1.9;color:var(--ink-mid);max-width:380px;margin-bottom:3rem;}
+  .hero-desc{font-size:0.85rem;line-height:1.9;color:var(--ink-mid);max-width:380px;margin-bottom:1.8rem;}
   .hero-cta{display:inline-flex;align-items:center;gap:1rem;color:var(--ink);text-decoration:none;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;border-bottom:1px solid var(--ink-light);padding-bottom:0.4rem;transition:all 0.3s;width:fit-content;}
   .hero-cta:hover{border-color:var(--ink);gap:1.5rem;}
-  .hero-right{background:var(--butter);position:relative;overflow:hidden;}
+  .hero-right{background:var(--butter);position:relative;overflow:hidden;aspect-ratio:16/9;}
   .hero-photo{width:100%;height:100%;background:var(--butter);display:flex;align-items:center;justify-content:center;}
   .hero-photo img{width:100%;height:100%;object-fit:cover;}
   .hero-photo-ph{color:rgba(28,28,28,0.2);font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;text-align:center;line-height:2.2;padding:2rem;}
 
   /* STATS */
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line-strong);background:var(--butter);border-bottom:1px solid var(--line-strong);}
-  .stat-item{padding:2.5rem 3rem;border-right:1px solid var(--line);}
+  .stats{display:flex;flex-wrap:wrap;justify-content:flex-start;align-items:stretch;border-top:1px solid var(--line-strong);background:var(--butter);border-bottom:1px solid var(--line-strong);padding:1.4rem 4rem;}
+  .stat-item{padding:0.5rem 2.4rem;border-right:1px solid var(--line-strong);}.stat-item:first-child{padding-left:0;}.stat-item:last-child{border-right:none;}
   .stat-item:last-child{border-right:none;}
   .stat-num{font-family:var(--font-display);font-size:clamp(2.2rem,4vw,3.5rem);font-weight:300;color:var(--ink);line-height:1;margin-bottom:0.4rem;}
   .stat-label{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-light);}
 
   /* SERVICES */
-  .services{padding:7rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:0;background:radial-gradient(circle at top right,rgba(245,239,200,0.12) 0%,rgba(20,20,20,0) 55%),#141414;}
+  .services{padding:4.5rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:0;background:radial-gradient(circle at top right,rgba(245,239,200,0.12) 0%,rgba(20,20,20,0) 55%),#141414;}
   .services-intro{padding-right:6rem;border-right:1px solid var(--line);}
   .section-label{font-size:0.62rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-light);margin-bottom:2rem;}
   .section-title{font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.15;color:var(--ink);margin-bottom:1.5rem;}
   .section-title em{font-style:italic;color:var(--ink-light);}
   .section-body{font-size:0.84rem;line-height:1.95;color:var(--ink-mid);}
-  .services-grid{padding-left:6rem;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-content:start;}
+  .services-grid{padding-left:3.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;align-content:start;}.services-right{padding-left:0;}.services-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;padding-left:3.5rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--line);}.services-stats .stat-item{padding:0;border:none;}
   .service-item{padding-top:2rem;border-top:1px solid var(--line);text-decoration:none;display:block;transition:all 0.3s;}
   .service-item:hover .service-name{color:var(--ink);}
   .service-num{font-family:var(--font-display);font-size:0.75rem;color:var(--ink-light);margin-bottom:0.6rem;}
@@ -83,7 +83,7 @@
   .service-desc{font-size:0.72rem;letter-spacing:0.05em;color:var(--ink-light);line-height:1.7;}
 
   /* FEATURED */
-  .featured{padding:4rem 4rem 7rem;border-top:1px solid var(--line);background:radial-gradient(circle at bottom left,rgba(245,239,200,0.14) 0%,rgba(20,20,20,0) 55%),#141414;}
+  .featured{padding:4rem 4rem 7rem;border-top:1px solid var(--line);background:linear-gradient(180deg,#efe7c4 0%,#e4dcb2 100%);}.featured .section-label{color:var(--ink-dark-mid);}.featured .section-title{color:var(--ink-dark);}.featured .view-all{color:var(--ink-dark-mid);border-bottom-color:rgba(28,28,28,0.25);}
   .featured-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;}
   .view-all{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-light);text-decoration:none;border-bottom:1px solid var(--line-strong);padding-bottom:0.25rem;transition:all 0.3s;}
   .view-all:hover{color:var(--ink);border-color:var(--ink);}
@@ -131,16 +131,16 @@
     .nav-dropdown:hover .dropdown-menu{display:flex;}
     .hero{grid-template-columns:1fr;min-height:auto;padding-right:0;margin-top:0;}
     .hero-right{min-height:50vw;}
-    .hero-left{padding:7rem 1.5rem 3.5rem;}
-    .stats{grid-template-columns:repeat(3,1fr);}
-    .stat-item{border-right:1px solid var(--line);border-bottom:none;padding:1.3rem 0.4rem;text-align:left;}.stat-item:last-child{border-right:none;}.stat-num{font-size:1.5rem;margin-bottom:0.3rem;}.stat-label{font-size:0.5rem;letter-spacing:0.08em;}
+    .hero-left{padding:2.4rem 1.5rem 1.8rem;}
+    .stats{justify-content:center;padding:1.4rem 1.2rem;flex-wrap:nowrap;}
+    .stat-item{border-right:1px solid var(--line-strong);border-bottom:none;padding:0.3rem 1.05rem;text-align:left;}.stat-item:first-child{padding-left:0;}.stat-item:last-child{border-right:none;}.stat-item:last-child{border-right:none;}.stat-num{font-size:1.5rem;margin-bottom:0.3rem;}.stat-label{font-size:0.5rem;letter-spacing:0.08em;}
     .services{grid-template-columns:1fr;padding:5rem 1.5rem;}
     .services-intro{padding-right:0;border-right:none;border-bottom:1px solid var(--line);padding-bottom:3rem;margin-bottom:3rem;}
     .services-grid{padding-left:0;grid-template-columns:1fr 1fr;}
-    .featured{padding:2.75rem 1.5rem 3rem;}
+    .featured{padding:2.2rem 1.5rem 3rem;}
     .featured-grid{grid-template-columns:1fr 1fr;}
     .featured-item.tall{grid-column:1/-1;aspect-ratio:16/9;}
-    .cta-band{grid-template-columns:1fr;padding:2.75rem 1.5rem;gap:2rem;}
+    .cta-band{grid-template-columns:1fr;padding:2.2rem 1.5rem;gap:2rem;}
     footer{flex-direction:column;gap:1.2rem;text-align:left;padding:2rem 1.5rem;}
   }
 
@@ -173,7 +173,7 @@
   }
 
   /* REVIEWS */
-  .reviews-section{padding:5rem 4rem 7rem;border-top:1px solid var(--line);background:radial-gradient(circle at top right,rgba(245,239,200,0.20) 0%,transparent 60%),#1a1a1a;}
+  .reviews-section{padding:3.5rem 4rem 4rem;border-top:1px solid var(--line);background:radial-gradient(circle at top right,rgba(245,239,200,0.20) 0%,transparent 60%),#1a1a1a;}
   .reviews-intro{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;}
   .reviews-nav{display:flex;gap:0.75rem;}
   .rev-btn{width:44px;height:44px;border:1px solid var(--line-strong);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;flex-shrink:0;}
@@ -223,19 +223,19 @@
     .nav-dropdown:hover .dropdown-menu{display:flex;}
     .page-hero{grid-template-columns:1fr;}
     .page-hero-right{display:none;}
-    .page-hero-left{padding:2.75rem 1.5rem 2rem;}
-    .about-intro{grid-template-columns:1fr;gap:3rem;padding:2.75rem 1.5rem;}
+    .page-hero-left{padding:2.2rem 1.5rem 2rem;}
+    .about-intro{grid-template-columns:1fr;gap:3rem;padding:2.2rem 1.5rem;}
     .photo-accent{display:none;}
     .photo-stack{padding:0;}
     .about-stats{flex-direction:column;gap:1.5rem;}
     .about-stat{border-right:none;border-bottom:1px solid var(--line);padding-bottom:1.5rem;margin-right:0;}
-    .journey{grid-template-columns:1fr;gap:3rem;padding:2.75rem 1.5rem 3.5rem;}
+    .journey{grid-template-columns:1fr;gap:3rem;padding:2.2rem 1.5rem 3.5rem;}
     .journey-label-col{position:static;}
-    .demo-reel{padding:2.75rem 1.5rem 3.5rem;}
-    .reviews-section{padding:2.75rem 1.5rem 3.5rem;}
+    .demo-reel{padding:2.2rem 1.5rem 3.5rem;}
+    .reviews-section{padding:2.2rem 1.5rem 3.5rem;}
     .review-card{flex:0 0 calc(85vw - 3rem);}
     .reviews-intro{flex-direction:column;align-items:flex-start;gap:1.5rem;}
-    .cta-band{grid-template-columns:1fr;padding:2.75rem 1.5rem;gap:2rem;}
+    .cta-band{grid-template-columns:1fr;padding:2.2rem 1.5rem;gap:2rem;}
     footer{flex-direction:column;gap:1.2rem;text-align:left;padding:2rem 1.5rem;}
   }
 
@@ -386,7 +386,7 @@
   </div>
 </section>
 
-<section class="stats stagger-children">
+<section class="stats stagger-children desktop-hide">
   <div class="stat-item"><p class="stat-num">4M+</p><p class="stat-label">Views</p></div>
   <div class="stat-item"><p class="stat-num">40K+</p><p class="stat-label">Followers</p></div>
   <div class="stat-item"><p class="stat-num">10+</p><p class="stat-label">Years Behind a Camera</p></div>
@@ -398,10 +398,17 @@
     <h2 class="section-title">Visual stories<br>that <em>move</em> people</h2>
     <p class="section-body">From the emotion of a first dance to the elegance of a luxury property, every moment deserves to last forever.</p>
   </div>
-  <div class="services-grid stagger-children">
+  <div class="services-right">
+    <div class="services-grid stagger-children">
     <a href="weddings.html" class="service-item fade-up"><p class="service-num">01</p><p class="service-name">Wedding Films</p><p class="service-desc">Timeless, emotional storytelling</p></a>
-    <a href="real-estate.html" class="service-item fade-up"><p class="service-num">02</p><p class="service-name">Real Estate</p><p class="service-desc">Photo, video &amp; drone</p></a>
+    <a href="real-estate.html" class="service-item fade-up"><p class="service-num">02</p><p class="service-name">Real Estate</p><p class="service-desc">Photo, video, and drone</p></a>
     <a href="about.html" class="service-item fade-up"><p class="service-num">03</p><p class="service-name">About</p><p class="service-desc">The vision behind the lens</p></a>
+    </div>
+    <div class="services-stats">
+      <div class="stat-item"><p class="stat-num">4M+</p><p class="stat-label">Views</p></div>
+      <div class="stat-item"><p class="stat-num">40K+</p><p class="stat-label">Followers</p></div>
+      <div class="stat-item"><p class="stat-num">10+</p><p class="stat-label">Years Behind a Camera</p></div>
+    </div>
   </div>
 </section>
 
@@ -467,7 +474,7 @@
       <div class="review-card">
         <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
         <p class="review-text">"The drone footage of our lakefront property was the highlight of the listing. Allison was punctual, professional, and delivered ahead of schedule."</p>
-        <div class="review-author"><strong>David L.</strong>Real estate photo, video &amp; drone</div>
+        <div class="review-author"><strong>David L.</strong>Real estate photo, video, and drone</div>
       </div>
 
       <!-- ADD MORE: Copy a .review-card div and replace the text/author -->
