@@ -46,18 +46,18 @@
   .nav-toggle.open span:nth-child(2){opacity:0;}
   .nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px);}
 
-  .page-hero{min-height:520px;display:grid;grid-template-columns:1fr 1fr;align-items:center;margin-top:72px;background:var(--butter);padding-right:4rem;position:relative;overflow:hidden;}.about-skyline{position:absolute;left:0;right:0;bottom:0;height:88%;opacity:0.5;pointer-events:none;z-index:0;}.page-hero-left,.page-hero-right{z-index:1;}
-  .page-hero-left{background:var(--butter);color:var(--ink-dark);color:var(--ink-dark);padding:5rem 4rem;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;}
+  .page-hero{min-height:460px;display:grid;grid-template-columns:1fr 1fr;align-items:center;margin-top:72px;background:radial-gradient(135% 150% at 10% 0%, #fdfae0 0%, #f3ecc6 32%, #e2d7a2 68%, #cabf7e 100%);padding-right:4rem;position:relative;overflow:hidden;}.about-skyline{position:absolute;left:0;right:0;bottom:0;height:300px;opacity:0.6;pointer-events:none;z-index:0;}.page-hero-left,.page-hero-right{z-index:1;}
+  .page-hero-left{background:transparent;color:var(--ink-dark);padding:5rem 4rem;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;}
   
   .page-eyebrow{font-size:0.7rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--ink-light);margin-bottom:1.5rem;position:relative;z-index:1;}
   .page-title{font-family:var(--font-display);font-size:clamp(3rem,6vw,5.5rem);font-weight:300;line-height:0.95;color:var(--ink);position:relative;z-index:1;}
   .page-title em{font-style:italic;color:var(--ink-dark-mid);}
-  .page-hero-right{background:var(--butter);position:relative;display:flex;align-items:center;justify-content:center;padding:2.5rem;}.page-hero-right img{position:static;max-width:100%;max-height:clamp(260px,38vh,360px);width:auto;height:auto;display:block;}
+  .page-hero-right{background:transparent;position:relative;display:flex;align-items:center;justify-content:center;padding:2.5rem;}.page-hero-right img{position:static;max-width:100%;max-height:clamp(260px,38vh,360px);width:auto;height:auto;display:block;}
   .section-label{font-size:0.7rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-light);margin-bottom:1.5rem;}
 
-  .about-intro{padding:4rem 4rem;display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:stretch;border-top:1px solid var(--line);}
+  .about-intro{padding:4rem 4rem;display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:stretch;border-top:1px solid var(--line);background:linear-gradient(155deg,#0d0d0d 0%,#2c2c2c 100%);}
   .photo-stack{position:relative;}
-  .photo-main{width:100%;height:100%;background:var(--butter);overflow:hidden;display:flex;align-items:center;justify-content:center;}
+  .photo-main{position:absolute;inset:0;width:100%;height:100%;background:var(--butter);overflow:hidden;}
   .photo-main img{width:100%;height:100%;object-fit:cover;}
   .photo-placeholder{color:rgba(28,28,28,0.18);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;text-align:center;line-height:2.2;padding:1rem;}
   .photo-accent{position:absolute;bottom:0;right:0;width:52%;aspect-ratio:5/6;background:#d8d2c4;border:4px solid var(--cream);overflow:hidden;display:flex;align-items:center;justify-content:center;}
@@ -273,7 +273,6 @@
 </nav>
 
 <section class="page-hero">
-  <svg class="about-skyline" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polyline points="0,300 0,207 41,207 41,189 92,189 92,42 111,42 111,171 149,171 149,188 180,188 180,166 234,166 234,208 280,208 280,127 319,127 319,179 368,179 368,136 403,136 403,174 439,174 439,183 484,183 484,150 530,150 530,152 578,152 578,201 617,201 617,161 644,161 644,161 670,161 670,191 723,191 723,208 762,208 762,51 789,51 789,152 826,152 826,168 878,168 878,180 932,180 932,180 960,180 960,191 1007,191 1007,14 1028,14 1028,183 1077,183 1077,210 1131,210 1131,166 1184,166 1184,221 1200,221 1200,300" fill="#ddd39c"/><polyline points="0,300 0,219 44,219 44,230 71,230 71,195 116,195 116,212 144,212 144,187 184,187 184,236 221,236 221,77 241,77 241,226 273,226 273,169 297,169 297,89 316,89 316,210 351,210 351,186 386,186 386,171 429,171 429,178 474,178 474,238 520,238 520,161 558,161 558,220 595,220 595,163 638,163 638,239 661,239 661,204 697,204 697,177 740,177 740,157 777,157 777,174 803,174 803,177 845,177 845,165 871,165 871,157 898,157 898,213 925,213 925,231 960,231 960,227 1006,227 1006,151 1036,151 1036,173 1061,173 1061,232 1094,232 1094,184 1132,184 1132,198 1160,198 1160,229 1196,229 1196,234 1200,234 1200,300" fill="#c7b878"/><polyline points="0,300 0,177 22,177 22,234 41,234 41,190 76,190 76,119 94,119 94,182 123,182 123,217 160,217 160,217 193,217 193,194 211,194 211,223 238,223 238,181 270,181 270,232 304,232 304,251 327,251 327,221 355,221 355,211 376,211 376,209 412,209 412,231 440,231 440,188 464,188 464,249 497,249 497,202 517,202 517,227 540,227 540,97 560,97 560,91 583,91 583,233 601,233 601,175 626,175 626,186 647,186 647,256 669,256 669,186 687,186 687,89 712,89 712,254 746,254 746,245 768,245 768,252 805,252 805,258 829,258 829,177 863,177 863,177 897,177 897,131 918,131 918,175 947,175 947,181 975,181 975,193 1001,193 1001,187 1027,187 1027,250 1067,250 1067,204 1091,204 1091,228 1116,228 1116,239 1137,239 1137,179 1159,179 1159,227 1185,227 1185,197 1200,197 1200,300" fill="#a89a5e"/><line x1="85" y1="119" x2="85" y2="105" stroke="#8f8452" stroke-width="1.2"/><line x1="550" y1="97" x2="550" y2="83" stroke="#8f8452" stroke-width="1.2"/><line x1="571" y1="91" x2="571" y2="77" stroke="#8f8452" stroke-width="1.2"/><line x1="699" y1="89" x2="699" y2="75" stroke="#8f8452" stroke-width="1.2"/><line x1="907" y1="131" x2="907" y2="117" stroke="#8f8452" stroke-width="1.2"/></svg>
   <div class="page-hero-left">
     <p class="page-eyebrow">Grand Rapids, Michigan</p>
     <h1 class="page-title">Allison <em>Kroes</em></h1>
@@ -289,7 +288,7 @@
   </div>
   <div class="about-text slide-right">
     <p class="section-label">Filmmaker &amp; Cinematographer</p>
-    <h2 class="about-heading">Capturing moments<br>that <em>last forever</em></h2>
+    <h2 class="about-heading">How I got <em>here</em></h2>
     <p class="about-body">Hi, I'm Allison! I've been recording pretty much everything since I was 12 &mdash; there was just something about a camera being able to freeze a moment and keep it forever. That obsession never really wore off, and somewhere along the way it turned into my whole career.</p>
     <p class="about-body">So when it came time to pick a major, film was kind of a no-brainer. I studied it at Grand Valley State University and got my hands on every part of the process, from the first planning meeting all the way to the final edit.</p>
     <p class="about-body">An internship at Coastline Studios pulled me into wedding videography, and I loved it enough to keep working with them after I graduated. I also spent a ton of time shooting real estate with Smallegan Real Estate &mdash; that's where I really learned how to make a property look its absolute best.</p>
