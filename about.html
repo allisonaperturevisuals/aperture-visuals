@@ -57,7 +57,7 @@
 
   .about-intro{padding:4rem 4rem;display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:stretch;border-top:1px solid var(--line);background:linear-gradient(155deg,#0d0d0d 0%,#2c2c2c 100%);}
   .photo-stack{position:relative;}
-  .photo-main{position:absolute;inset:0;width:100%;height:100%;background:var(--butter);overflow:hidden;}
+  .photo-main{position:relative;width:100%;background:var(--butter);overflow:hidden;}
   .photo-main img{width:100%;height:100%;object-fit:cover;}
   .photo-placeholder{color:rgba(28,28,28,0.18);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;text-align:center;line-height:2.2;padding:1rem;}
   .photo-accent{position:absolute;bottom:0;right:0;width:52%;aspect-ratio:5/6;background:#d8d2c4;border:4px solid var(--cream);overflow:hidden;display:flex;align-items:center;justify-content:center;}
@@ -283,7 +283,7 @@
 <section class="about-intro mobile-hide">
   <div class="photo-stack slide-left">
     <div class="photo-main">
-      <img src="images/about-allison.jpg" alt="Allison Kroes" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+      <img src="images/about-allison.jpg" alt="Allison Kroes" style="width:100%;height:auto;display:block;">
     </div>
   </div>
   <div class="about-text slide-right">
