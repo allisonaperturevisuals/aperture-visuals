@@ -145,7 +145,7 @@
   .examples-films{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
   .example-film{position:relative;}
   .example-frame{aspect-ratio:16/9;background:#2a2a2a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;position:relative;overflow:hidden;}
-  .example-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .example-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}.mode-hidden{display:none !important;}.gallery-card{text-decoration:none;display:block;}.gallery-card .example-frame{cursor:pointer;}.gallery-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.28);opacity:0;transition:opacity 0.3s;z-index:2;}.gallery-overlay span{color:#fff;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.85);padding:0.7rem 1.4rem;}.gallery-card:hover .gallery-overlay{opacity:1;}
   .example-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
   .play-circle{width:56px;height:56px;border-radius:50%;border:1.5px solid rgba(28,28,28,0.3);display:flex;align-items:center;justify-content:center;position:relative;z-index:1;}
   .play-circle svg{width:18px;height:18px;fill:rgba(28,28,28,0.4);margin-left:4px;}
@@ -396,7 +396,7 @@
   <a class="mb-cta" id="mb-cta" href="#">Inquire &rarr;</a>
 </div>
 
-<section class="examples-section fade-up mobile-hide" style="position:relative;">
+<section class="examples-section fade-up mobile-hide" id="examples-film" style="position:relative;">
   
   <p class="section-label">Work samples</p>
   <h2 class="section-title" style="margin-top:1rem;">See the <em>films</em></h2>
@@ -416,6 +416,29 @@
         </div>
         <p class="example-label">Film example two</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="examples-section fade-up mode-hidden" id="examples-photo" style="position:relative;">
+  <p class="section-label">Galleries</p>
+  <h2 class="section-title" style="margin-top:1rem;">See the <em>photos</em></h2>
+  <div class="examples-layout">
+    <div class="examples-films">
+      <a class="example-film gallery-card" href="#" target="_blank" rel="noopener">
+        <div class="example-frame">
+          <img src="images/wedding-1.jpg" alt="Wedding gallery one">
+          <div class="gallery-overlay"><span>View gallery &rarr;</span></div>
+        </div>
+        <p class="example-label">Gallery one</p>
+      </a>
+      <a class="example-film gallery-card" href="#" target="_blank" rel="noopener">
+        <div class="example-frame">
+          <img src="images/wedding-6.jpg" alt="Wedding gallery two">
+          <div class="gallery-overlay"><span>View gallery &rarr;</span></div>
+        </div>
+        <p class="example-label">Gallery two</p>
+      </a>
     </div>
   </div>
 </section>
@@ -474,7 +497,7 @@ const selPkg=function(){return C().pkgs.find(function(p){return p.id===st.pkg;})
 const pkgPrice=function(p){return C().hasSliders ? getBase()+p.mod : p.price;};
 function setById(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}
 function applyMode(){
-  var c=C(); st.pkg='essential'; st.addons=new Set();var isFilm=(mode==='film');var _ht=document.getElementById('hero-title');if(_ht)_ht.innerHTML=isFilm?'Wedding <em>Films</em>':'Wedding <em>Photography</em>';var _he=document.getElementById('hero-eyebrow');if(_he)_he.textContent=isFilm?'Timeless storytelling':'Captured forever';var _hs=document.getElementById('hero-subtitle');if(_hs)_hs.textContent=isFilm?'Your day is one of the most important of your life. I am here to make sure you can relive every emotion of it, forever.':'From the first look to the last dance, captured in timeless, editorial imagery you will treasure for a lifetime.';var _hf=document.getElementById('hero-img-film');if(_hf)_hf.style.display=isFilm?'':'none';var _hc=document.getElementById('hero-carousel');if(_hc)_hc.style.display=isFilm?'none':'';if(typeof startCarousel==='function'){if(isFilm){stopCarousel();}else{showSlide(0);startCarousel();}}
+  var c=C(); st.pkg='essential'; st.addons=new Set();var isFilm=(mode==='film');var _ht=document.getElementById('hero-title');if(_ht)_ht.innerHTML=isFilm?'Wedding <em>Films</em>':'Wedding <em>Photography</em>';var _he=document.getElementById('hero-eyebrow');if(_he)_he.textContent=isFilm?'Timeless storytelling':'Captured forever';var _hs=document.getElementById('hero-subtitle');if(_hs)_hs.textContent=isFilm?'Your day is one of the most important of your life. I am here to make sure you can relive every emotion of it, forever.':'From the first look to the last dance, captured in timeless, editorial imagery you will treasure for a lifetime.';var _hf=document.getElementById('hero-img-film');if(_hf)_hf.style.display=isFilm?'':'none';var _hc=document.getElementById('hero-carousel');if(_hc)_hc.style.display=isFilm?'none':'';if(typeof startCarousel==='function'){if(isFilm){stopCarousel();}else{showSlide(0);startCarousel();}}var _ef=document.getElementById('examples-film');if(_ef)_ef.classList.toggle('mode-hidden',!isFilm);var _ep=document.getElementById('examples-photo');if(_ep)_ep.classList.toggle('mode-hidden',isFilm);
   document.getElementById('calc-title').innerHTML=c.title;
   setById('calc-intro-text',c.intro);
   var sl=c.hasSliders;
