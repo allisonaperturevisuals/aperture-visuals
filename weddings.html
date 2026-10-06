@@ -43,7 +43,7 @@
   .page-subtitle{font-size:0.94rem;line-height:1.9;color:var(--ink-mid);max-width:400px;margin-top:2rem;}
   .hero-jump-btn{display:inline-flex;align-items:center;gap:0.6rem;margin-top:1.8rem;padding:0.85rem 1.8rem;border:1px solid var(--ink-dark);color:var(--ink-dark);text-decoration:none;font-family:var(--font-body);font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;transition:all 0.3s;background:transparent;}
   .hero-jump-btn:hover{background:var(--ink-dark);color:var(--butter);}
-  .page-hero-right{background:var(--butter);overflow:hidden;}
+  .page-hero-right{background:var(--butter);overflow:hidden;position:relative;}.mode-toggle{display:inline-flex;gap:2rem;margin-bottom:2rem;align-self:flex-start;}.mode-btn{background:none;border:none;padding:0.4rem 0;font-size:0.74rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-dark-mid);cursor:pointer;border-bottom:2px solid transparent;transition:all 0.25s;font-family:inherit;}.mode-btn.active{color:var(--ink-dark);border-bottom-color:var(--ink-dark);}.mode-btn:hover{color:var(--ink-dark);}.carousel{position:relative;width:100%;height:100%;min-height:100%;overflow:hidden;background:#1a1a1a;}.carousel-slides{position:absolute;inset:0;}.cslide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.8s ease;}.cslide.active{opacity:1;}.carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.32);color:#fff;border:none;width:42px;height:42px;border-radius:50%;font-size:1.4rem;line-height:1;cursor:pointer;z-index:3;display:flex;align-items:center;justify-content:center;transition:background 0.25s;}.carousel-arrow:hover{background:rgba(0,0,0,0.6);}.carousel-arrow.prev{left:1rem;}.carousel-arrow.next{right:1rem;}.carousel-dots{position:absolute;bottom:1rem;left:0;right:0;display:flex;justify-content:center;gap:0.5rem;z-index:3;}.cdot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.55);border:none;cursor:pointer;padding:0;transition:all 0.25s;}.cdot.active{background:#fff;width:22px;border-radius:4px;}@media(max-width:900px){.carousel{min-height:60vw;}.mode-toggle{gap:1.4rem;}}
   .page-hero-img{width:100%;height:100%;background:var(--butter);display:flex;align-items:center;justify-content:center;}
   .page-hero-img img{width:100%;height:100%;object-fit:cover;}
   .page-hero-img-ph{color:rgba(28,28,28,0.18);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;text-align:center;line-height:2.2;}
@@ -319,13 +319,23 @@
 
 <section class="page-hero">
   <div class="page-hero-left">
-    <p class="page-eyebrow">Timeless storytelling</p>
-    <h1 class="page-title">Wedding <em>Films</em></h1>
-    <p class="page-subtitle">Your day is one of the most important of your life. I'm here to make sure you can relive every emotion of it, forever.</p>
+    <div class="mode-toggle">
+      <button class="mode-btn active" data-mode="film">Wedding Films</button>
+      <button class="mode-btn" data-mode="photo">Wedding Photography</button>
+    </div>
+    <p class="page-eyebrow" id="hero-eyebrow">Timeless storytelling</p>
+    <h1 class="page-title" id="hero-title">Wedding <em>Films</em></h1>
+    <p class="page-subtitle" id="hero-subtitle">Your day is one of the most important of your life. I'm here to make sure you can relive every emotion of it, forever.</p>
     <a href="#calculator" class="hero-jump-btn">Build your package &darr;</a>
   </div>
   <div class="page-hero-right">
-    <div class="page-hero-img"><img src="images/weddings-hero.jpg" alt="Wedding film" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div class="page-hero-img" id="hero-img-film"><img src="images/weddings-hero.jpg" alt="Wedding film" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div class="carousel" id="hero-carousel" style="display:none;">
+      <div class="carousel-slides"><img src="images/wedding-1.jpg" class="cslide active" alt="Wedding photography 1"><img src="images/wedding-2.jpg" class="cslide" alt="Wedding photography 2"><img src="images/wedding-3.jpg" class="cslide" alt="Wedding photography 3"><img src="images/wedding-4.jpg" class="cslide" alt="Wedding photography 4"><img src="images/wedding-5.jpg" class="cslide" alt="Wedding photography 5"><img src="images/wedding-6.jpg" class="cslide" alt="Wedding photography 6"><img src="images/wedding-7.jpg" class="cslide" alt="Wedding photography 7"><img src="images/wedding-8.jpg" class="cslide" alt="Wedding photography 8"><img src="images/wedding-9.jpg" class="cslide" alt="Wedding photography 9"><img src="images/wedding-10.jpg" class="cslide" alt="Wedding photography 10"></div>
+      <button class="carousel-arrow prev" aria-label="Previous photo">&lsaquo;</button>
+      <button class="carousel-arrow next" aria-label="Next photo">&rsaquo;</button>
+      <div class="carousel-dots" id="carousel-dots"></div>
+    </div>
   </div>
 </section>
 
@@ -338,7 +348,6 @@
     </div>
     <svg class="calc-intro-rings" viewBox="0 0 70 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="25" cy="28" r="16" stroke="#b8a070" stroke-width="1.1"/><circle cx="45" cy="28" r="16" stroke="#b8a070" stroke-width="1.1"/><polygon points="25,8 29,13 25,18 21,13" stroke="#b8a070" stroke-width="1" fill="none"/></svg>
   </div>
-  <div class="calc-toggle"><button class="ct-btn active" data-mode="film">Wedding Film</button><button class="ct-btn" data-mode="photo">Wedding Photography</button></div>
   <div class="calc-wrap">
     <div class="calc-steps">
       <div class="calc-step" id="step-s1">
@@ -395,9 +404,7 @@
     <div class="examples-films">
       <div class="example-film">
         <div class="example-frame">
-          <!-- REPLACE: <iframe src="https://www.youtube.com/embed/YOUR_ID" allowfullscreen></iframe> -->
-          <div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="example-ph">Wedding film 1<br>Paste YouTube or Vimeo embed here</div>
+          <iframe src="https://www.youtube.com/embed/YXmpgIbz2u4" title="Wedding film one" allowfullscreen></iframe>
         </div>
         <p class="example-label">Film example one</p>
       </div>
@@ -467,7 +474,7 @@ const selPkg=function(){return C().pkgs.find(function(p){return p.id===st.pkg;})
 const pkgPrice=function(p){return C().hasSliders ? getBase()+p.mod : p.price;};
 function setById(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}
 function applyMode(){
-  var c=C(); st.pkg='essential'; st.addons=new Set();
+  var c=C(); st.pkg='essential'; st.addons=new Set();var isFilm=(mode==='film');var _ht=document.getElementById('hero-title');if(_ht)_ht.innerHTML=isFilm?'Wedding <em>Films</em>':'Wedding <em>Photography</em>';var _he=document.getElementById('hero-eyebrow');if(_he)_he.textContent=isFilm?'Timeless storytelling':'Captured forever';var _hs=document.getElementById('hero-subtitle');if(_hs)_hs.textContent=isFilm?'Your day is one of the most important of your life. I am here to make sure you can relive every emotion of it, forever.':'From the first look to the last dance, captured in timeless, editorial imagery you will treasure for a lifetime.';var _hf=document.getElementById('hero-img-film');if(_hf)_hf.style.display=isFilm?'':'none';var _hc=document.getElementById('hero-carousel');if(_hc)_hc.style.display=isFilm?'none':'';if(typeof startCarousel==='function'){if(isFilm){stopCarousel();}else{showSlide(0);startCarousel();}}
   document.getElementById('calc-title').innerHTML=c.title;
   setById('calc-intro-text',c.intro);
   var sl=c.hasSliders;
@@ -521,7 +528,7 @@ function render(){
 var sl1=document.getElementById('s1-slider'); if(sl1)sl1.addEventListener('input',function(e){st.s1=parseInt(e.target.value);render();});
 var sl2=document.getElementById('s2-slider'); if(sl2)sl2.addEventListener('input',function(e){st.s2=parseInt(e.target.value);render();});
 document.addEventListener('click',function(e){
-  var t=e.target.closest('[data-mode]');if(t){mode=t.dataset.mode;document.querySelectorAll('.ct-btn').forEach(function(b){b.classList.toggle('active',b.dataset.mode===mode);});applyMode();render();return;}
+  var t=e.target.closest('[data-mode]');if(t){mode=t.dataset.mode;document.querySelectorAll('.mode-btn').forEach(function(b){b.classList.toggle('active',b.dataset.mode===mode);});var cIdx=0,cTimer=null;function showSlide(i){var s=document.querySelectorAll('.cslide'),d=document.querySelectorAll('.cdot');if(!s.length)return;cIdx=(i+s.length)%s.length;s.forEach(function(x,n){x.classList.toggle('active',n===cIdx);});d.forEach(function(x,n){x.classList.toggle('active',n===cIdx);});}function nextSlide(){showSlide(cIdx+1);}function startCarousel(){stopCarousel();cTimer=setInterval(nextSlide,5000);}function stopCarousel(){if(cTimer){clearInterval(cTimer);cTimer=null;}}(function(){var s=document.querySelectorAll('.cslide'),dc=document.getElementById('carousel-dots');if(dc){s.forEach(function(_,n){var b=document.createElement('button');b.className='cdot'+(n===0?' active':'');b.addEventListener('click',function(){showSlide(n);startCarousel();});dc.appendChild(b);});}var nx=document.querySelector('.carousel-arrow.next'),pv=document.querySelector('.carousel-arrow.prev');if(nx)nx.addEventListener('click',function(){nextSlide();startCarousel();});if(pv)pv.addEventListener('click',function(){showSlide(cIdx-1);startCarousel();});})();applyMode();render();return;}
   var p=e.target.closest('[data-pkg]');if(p){st.pkg=p.dataset.pkg;return render();}
   var a=e.target.closest('[data-addon]');if(a){var id=a.dataset.addon;st.addons.has(id)?st.addons.delete(id):st.addons.add(id);return render();}
 });
