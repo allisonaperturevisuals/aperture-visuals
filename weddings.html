@@ -33,7 +33,7 @@
   .dropdown-menu a{padding:0.75rem 1.5rem;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-light);text-decoration:none;transition:all 0.2s;white-space:nowrap;}
   .dropdown-menu a:hover{color:var(--ink);background:#0f0f0f;}
   .dropdown-divider{height:1px;background:var(--line);margin:0.4rem 0;}
-  .nav-toggle{display:none;position:absolute;left:1.5rem;right:auto;top:50%;transform:translateY(-50%);flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+  .nav-toggle{display:none;position:absolute;left:1.5rem;right:auto;top:1.05rem;transform:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}.nav-toggle.open span{transform:none !important;opacity:1 !important;}
   .nav-toggle span{display:block;width:22px;height:1px;background:var(--ink);}
   .page-hero{min-height:auto;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;margin-top:0;background:var(--butter);}
   .page-hero-left{background:var(--butter);color:var(--ink-dark);color:var(--ink-dark);padding:5rem 4rem;display:flex;flex-direction:column;justify-content:flex-end;}
@@ -135,8 +135,8 @@
   .quote-disclaimers p::before{content:'·';position:absolute;left:0;color:var(--ink-light);}
   .mobile-bar{position:fixed;left:0;right:0;bottom:0;transform:translateY(100%);transition:transform 0.35s ease;background:var(--ink);color:var(--cream);display:none;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.5rem;z-index:20;}
   .mb-total{font-family:var(--font-display);font-size:2rem;font-weight:300;}
-  .mb-total small{display:block;font-family:var(--font-body);font-size:0.68rem;color:rgba(253,251,244,0.6);letter-spacing:0.1em;text-transform:uppercase;}
-  .mb-cta{background:var(--butter);color:var(--ink);border:none;padding:0.8rem 1.5rem;font-family:var(--font-body);font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;white-space:nowrap;}
+  .mb-total small{display:block;font-family:var(--font-body);font-size:0.68rem;color:rgba(28,28,28,0.55);letter-spacing:0.1em;text-transform:uppercase;}
+  .mb-cta{background:#1C1C1C;color:#F5EFC8;border:none;padding:0.85rem 1.4rem;font-family:var(--font-body);font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;white-space:nowrap;}
   @media(max-width:900px){.calc-rings-mobile{display:block;}.calc-rings-desktop{display:none;}.calc-step{padding-top:1.4rem;}.mobile-bar{display:flex !important;z-index:50;}.mobile-bar.bar-visible{transform:translateY(0);}.calc-wrap{grid-template-columns:1fr}.quote-panel{display:none !important}}
 
   /* VIDEO EXAMPLES */
@@ -163,7 +163,7 @@
   footer{padding:2.5rem 4rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:#1a1a1a;}
   .footer-logo{font-family:var(--font-display);font-size:1.05rem;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-light);}
   .footer-copy{font-size:0.72rem;color:var(--ink-light);}
-  .footer-links{display:flex;gap:2rem;list-style:none;}
+  .footer-links{display:flex;gap:2rem;list-style:none;}.footer-links a{display:inline-block;text-align:center;}
   .footer-links a{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-light);text-decoration:none;transition:color 0.3s;}
   .footer-links a:hover{color:var(--ink);}
   .fade-up{opacity:0;transform:translateY(22px);transition:opacity 0.7s ease,transform 0.7s ease;}
@@ -301,6 +301,31 @@
   .addon-row.checked .check-box{background:var(--ink-dark);border-color:var(--ink-dark);}
   .addon-row.checked .check-box svg{display:block;}
   .check-box svg{display:none;width:10px;height:10px;fill:none;stroke:var(--butter);stroke-width:2.5;}
+
+.est-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:1.2rem;}
+.est-modal.open{display:flex;}
+.est-backdrop{position:absolute;inset:0;background:rgba(10,10,10,0.62);}
+.est-card{position:relative;z-index:1;width:100%;max-width:440px;max-height:90vh;overflow:auto;background:#1b1b1b;color:#f5efc8;border:1px solid rgba(245,239,200,0.18);padding:2rem 1.8rem;box-shadow:0 20px 60px rgba(0,0,0,0.5);}
+.est-x{position:absolute;top:0.7rem;right:1rem;background:none;border:none;color:#f5efc8;font-size:1.7rem;line-height:1;cursor:pointer;opacity:0.65;}
+.est-x:hover{opacity:1;}
+.est-eyebrow{font-size:0.62rem;letter-spacing:0.28em;text-transform:uppercase;color:#c8b888;margin-bottom:0.5rem;}
+.est-card h3{font-family:var(--font-display);font-weight:300;font-size:1.9rem;margin:0 0 1.1rem;color:#f5efc8;}
+.est-summary{border-top:1px solid rgba(245,239,200,0.15);border-bottom:1px solid rgba(245,239,200,0.15);padding:0.9rem 0;margin-bottom:1.2rem;}
+.es-line{display:flex;justify-content:space-between;gap:1rem;font-size:0.85rem;padding:0.28rem 0;color:rgba(245,239,200,0.85);}
+.es-line.es-total{margin-top:0.4rem;padding-top:0.6rem;border-top:1px solid rgba(245,239,200,0.15);font-family:var(--font-display);font-size:1.2rem;color:#f5efc8;}
+.est-field{margin-bottom:0.9rem;}
+.est-field label{display:block;font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:#c8b888;margin-bottom:0.35rem;}
+.est-field input,.est-field textarea{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(245,239,200,0.3);color:#f5efc8;font-family:var(--font-body);font-size:0.95rem;padding:0.5rem 0;outline:none;resize:vertical;}
+.est-field input::placeholder,.est-field textarea::placeholder{color:rgba(245,239,200,0.4);}
+.est-field input:focus,.est-field textarea:focus{border-bottom-color:#c8b888;}
+.est-actions{display:flex;gap:0.8rem;margin-top:1.4rem;}
+.est-send{flex:1;background:#f5efc8;color:#1b1b1b;border:none;padding:0.95rem;font-family:var(--font-body);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;cursor:pointer;transition:opacity 0.2s;}
+.est-send:hover{opacity:0.88;}
+.est-download{background:transparent;color:#f5efc8;border:1px solid rgba(245,239,200,0.4);padding:0.95rem 1.1rem;font-family:var(--font-body);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.est-download:hover{border-color:#f5efc8;}
+.est-note{font-size:0.72rem;color:rgba(245,239,200,0.5);margin-top:0.9rem;line-height:1.6;}
+.est-err{display:none;color:#e8b4b4;font-size:0.8rem;margin-top:0.8rem;}
+.est-success{display:none;text-align:center;padding:1.4rem 0;color:#f5efc8;font-size:0.98rem;line-height:1.7;}
 </style>
 </head>
 <body>
@@ -395,7 +420,7 @@
 
 <div class="mobile-bar" id="mobile-bar">
   <span class="mb-total"><small>Your estimate</small><span id="mb-amt">$0</span></span>
-  <a class="mb-cta" id="mb-cta" href="#">Inquire &rarr;</a>
+  <a class="mb-cta" id="mb-cta" href="contact.html">Inquire &rarr;</a>
 </div>
 
 <section class="examples-section fade-up mobile-hide" id="examples-film" style="position:relative;">
@@ -460,6 +485,28 @@
   <span class="footer-copy">&copy; 2026 Aperture Visuals</span>
 </footer>
 
+<div class="est-modal" id="est-modal" aria-hidden="true">
+  <div class="est-backdrop" data-close></div>
+  <div class="est-card" role="dialog" aria-modal="true" aria-labelledby="est-title">
+    <button class="est-x" type="button" data-close aria-label="Close">&times;</button>
+    <h3 id="est-title">Your estimate</h3>
+    <div class="est-summary" id="est-summary"></div>
+    <form class="est-form" id="est-form">
+      <div class="est-field"><label>Your name</label><input name="name" required placeholder="Jane Smith"></div>
+      <div class="est-field"><label>Your email</label><input type="email" name="email" required placeholder="jane@email.com"></div>
+      <input type="hidden" name="estimate" id="est-hidden">
+      <input type="hidden" name="total" id="est-total-field">
+      <input type="hidden" name="_subject" id="est-subject">
+      <div class="est-actions">
+        <button type="submit" class="est-send">Send &rarr;</button>
+        <button type="button" class="est-download" id="est-download">Download</button>
+      </div>
+      <p class="est-err" id="est-err">Something went wrong &mdash; please try again, or email allison@aperture-visuals.com.</p>
+      <p class="est-note">I'll email you back to answer any questions you have. Your details are only used to reply to you &mdash; never shared.</p>
+    </form>
+    <div class="est-success" id="est-success">Thank you! Your estimate is on its way to Allison &mdash; she'll be in touch soon. Feel free to download a copy for yourself.</div>
+  </div>
+</div>
 <script>
 const toggle=document.getElementById('nav-toggle'),links=document.getElementById('nav-links');
 toggle.addEventListener('click',()=>links.classList.toggle('open'));
@@ -566,17 +613,63 @@ applyMode();render();
   const calcSection = document.getElementById('calculator');
   const mobileBar = document.getElementById('mobile-bar');
   if(calcSection && mobileBar){
+    let calcInView=false;
+    function updateBar(){
+      var nearBottom=(window.innerHeight+window.scrollY)>=(document.documentElement.scrollHeight-150);
+      if(calcInView && !nearBottom){mobileBar.classList.add('bar-visible');}else{mobileBar.classList.remove('bar-visible');}
+    }
     const barObs = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          mobileBar.classList.add('bar-visible');
-        } else {
-          mobileBar.classList.remove('bar-visible');
-        }
-      });
+      entries.forEach(entry=>{calcInView=entry.isIntersecting;});
+      updateBar();
     },{threshold:0.05});
     barObs.observe(calcSection);
+    window.addEventListener('scroll',updateBar,{passive:true});
+    window.addEventListener('resize',updateBar,{passive:true});
   }
+
+  // ----- Estimate modal -----
+  function buildEstimate(){
+    var c=C(),pkg=selPkg();
+    var base=pkgPrice(pkg);
+    var lineName=c.hasSliders?c.line(st.s1,st.s2):pkg.meta;
+    var picked=c.addons.filter(function(a){return st.addons.has(a.id);});
+    var addonTotal=picked.reduce(function(s,a){return s+a.price;},0);
+    var total=base+addonTotal;
+    var html='<div class="es-line"><span>'+lineName+' &middot; '+pkg.name+'</span><span>'+money(base)+'</span></div>';
+    picked.forEach(function(a){html+='<div class="es-line"><span>'+a.name+'</span><span>+'+money(a.price)+'</span></div>';});
+    html+='<div class="es-line es-total"><span>Estimated total</span><span>'+money(total)+'</span></div>';
+    var text=(c.mailType||'Package')+':\n\u2022 '+lineName+' ('+pkg.name+' package): '+money(base);
+    picked.forEach(function(a){text+='\n\u2022 '+a.name+': +'+money(a.price);});
+    text+='\n\nEstimated total: '+money(total);
+    return {html:html,text:text,total:money(total),subject:(c.subject||'Wedding estimate')};
+  }
+  function openEstimate(){
+    var est=buildEstimate();
+    var S=function(id,v){var el=document.getElementById(id);if(el)el.value=v;};
+    document.getElementById('est-summary').innerHTML=est.html;
+    S('est-hidden',est.text); S('est-total-field',est.total); S('est-subject','New estimate from your site \u2014 '+est.total);
+    window.__estText=est.text;
+    var m=document.getElementById('est-modal'); if(m){m.classList.add('open');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  }
+  function closeEstimate(){var m=document.getElementById('est-modal'); if(m){m.classList.remove('open');m.setAttribute('aria-hidden','true');document.body.style.overflow='';}}
+  ['cta-btn','mb-cta'].forEach(function(id){var b=document.getElementById(id); if(b)b.addEventListener('click',function(e){e.preventDefault();openEstimate();});});
+  document.querySelectorAll('#est-modal [data-close]').forEach(function(el){el.addEventListener('click',closeEstimate);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeEstimate();});
+  var ef=document.getElementById('est-form');
+  if(ef)ef.addEventListener('submit',function(e){
+    e.preventDefault();
+    var errEl=document.getElementById('est-err'); if(errEl)errEl.style.display='none';
+    fetch('https://formspree.io/f/mzdnkwzp',{method:'POST',body:new FormData(ef),headers:{'Accept':'application/json'}})
+      .then(function(res){ if(res.ok){ef.style.display='none';document.getElementById('est-success').style.display='block';} else {if(errEl)errEl.style.display='block';} })
+      .catch(function(){ if(errEl)errEl.style.display='block'; });
+  });
+  var dl=document.getElementById('est-download');
+  if(dl)dl.addEventListener('click',function(){
+    var txt='APERTURE VISUALS \u2014 Your Estimate\n\n'+(window.__estText||'')+'\n\nThis is an estimate, not a final quote. Reach out to lock in your date!\naperture-visuals.com';
+    var blob=new Blob([txt],{type:'text/plain'});var url=URL.createObjectURL(blob);
+    var a=document.createElement('a');a.href=url;a.download='aperture-visuals-estimate.txt';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+  });
+
 </script>
 </body>
 </html>
